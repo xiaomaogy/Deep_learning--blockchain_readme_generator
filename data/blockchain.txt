@@ -1,0 +1,4009 @@
+Bitcoin Core integration/staging tree
+=====================================
+
+[![Build Status](https://travis-ci.org/bitcoin/bitcoin.svg?branch=master)](https://travis-ci.org/bitcoin/bitcoin)
+
+https://bitcoincore.org
+
+What is Bitcoin?
+----------------
+
+Bitcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Bitcoin Core is the name of open source
+software which enables the use of this currency.
+
+For more information, as well as an immediately useable, binary version of
+the Bitcoin Core software, see https://bitcoin.org/en/download, or read the
+[original whitepaper](https://bitcoincore.org/bitcoin.pdf).
+
+License
+-------
+
+Bitcoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/bitcoin/bitcoin/tags) are created
+regularly to indicate new official, stable release versions of Bitcoin Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The developer [mailing list](https://lists.linuxfoundation.org/mailman/listinfo/bitcoin-dev)
+should be used to discuss complicated or controversial changes before working
+on a patch set.
+
+Developer IRC can be found on Freenode at #bitcoin-core-dev.
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
+submit new unit tests for old code. Unit tests can be compiled and run
+(assuming they weren't disabled in configure) with: `make check`. Further details on running
+and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+
+There are also [regression and integration tests](/test), written
+in Python, that are run automatically on the build server.
+These tests can be run (if the [test dependencies](/test) are installed) with: `test/functional/test_runner.py`
+
+The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+
+### Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+Translations
+------------
+
+Changes to translations as well as new translations can be submitted to
+[Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
+
+Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/bitcoin-translators).
+
+Litecoin Core integration/staging tree
+=====================================
+
+[![Build Status](https://travis-ci.org/litecoin-project/litecoin.svg?branch=master)](https://travis-ci.org/litecoin-project/litecoin)
+
+https://litecoin.org
+
+What is Litecoin?
+----------------
+
+Litecoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Litecoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Litecoin Core is the name of open source
+software which enables the use of this currency.
+
+For more information, as well as an immediately useable, binary version of
+the Litecoin Core software, see [https://litecoin.org](https://litecoin.org).
+
+License
+-------
+
+Litecoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/litecoin-project/litecoin/tags) are created
+regularly to indicate new official, stable release versions of Litecoin Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The developer [mailing list](https://groups.google.com/forum/#!forum/litecoin-dev)
+should be used to discuss complicated or controversial changes before working
+on a patch set.
+
+Developer IRC can be found on Freenode at #litecoin-dev.
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
+submit new unit tests for old code. Unit tests can be compiled and run
+(assuming they weren't disabled in configure) with: `make check`. Further details on running
+and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+
+There are also [regression and integration tests](/qa) of the RPC interface, written
+in Python, that are run automatically on the build server.
+These tests can be run (if the [test dependencies](/qa) are installed) with: `qa/pull-tester/rpc-tests.py`
+
+The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+
+### Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+Translations
+------------
+
+We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+Translations are converted to Litecoin periodically.
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
+
+# Dogecoin Core [DOGE, Ð]
+==========================
+
+![Dogecoin](http://static.tumblr.com/ppdj5y9/Ae9mxmxtp/300coin.png)
+
+[![Build Status](https://travis-ci.org/dogecoin/dogecoin.svg?branch=1.7-dev)](https://travis-ci.org/dogecoin/dogecoin) [![tip for next commit](https://tip4commit.com/projects/702.svg)](https://tip4commit.com/github/dogecoin/dogecoin)
+
+## What is Dogecoin? – Such coin
+Dogecoin is a cryptocurrency like Bitcoin, although it does not use SHA256 as its proof of work (POW). Taking development cues from Tenebrix and Litecoin, Dogecoin currently employs a simplified variant of scrypt.
+
+http://dogecoin.com/
+
+## License – Much license
+Dogecoin is released under the terms of the MIT license. See [COPYING](COPYING)
+for more information or see http://opensource.org/licenses/MIT.
+
+## Development and contributions – omg developers
+Development is ongoing, and the development team, as well as other volunteers, can freely work in their own trees and submit pull requests when features or bug fixes are ready.
+
+#### Version strategy
+Version numbers are following ```major.minor.patch``` semantics.
+
+#### Branches
+There are 3 types of branches in this repository:
+
+- **master:** Stable, contains the latest version of the latest *major.minor* release.
+- **maintenance:** Stable, contains the latest version of previous releases, which are still under active maintenance. Format: ```<version>-maint```
+- **development:** Unstable, contains new code for planned releases. Format: ```<version>-dev```
+
+*Master and maintenance branches are exclusively mutable by release. Planned releases will always have a development branch and pull requests should be submitted against those. Maintenance branches are there for* ***bug fixes only,*** *please submit new features against the development branch with the highest version.*
+
+## Very Much Frequently Asked Questions
+
+### How much doge can exist? – So many puppies!
+Early 2015 (approximately a year and a half after release) there will be approximately 100,000,000,000 coins.
+Each subsequent block will grant 10,000 coins to encourage miners to continue to secure the network and make up for lost wallets on hard drives/phones/lost encryption passwords/etc.
+
+### How to get doge? – To the moon!
+Dogecoin uses a simplified variant of the scrypt key derivation function as its proof of work with a target time of one minute per block and difficulty readjustment after every block. The block rewards are fixed and halve every 100,000 blocks. Starting with the 600,000th block, a permanent reward of 10,000 Dogecoin per block will be paid. 
+
+Originally, a different payout scheme was envisioned with block rewards being determined by taking the maximum reward as per the block schedule and applying the result of a Mersenne Twister pseudo-random number generator to arrive at a number between 0 and the maximum reward. This was changed, starting with block 145,000, to prevent large pools from gaming the system and mining only high reward blocks. At the same time, the difficulty retargeting was also changed from four hours to once per block (every minute), implementing an algorithm courtesy of the DigiByte Coin development team, to lessen the impact of sudden increases and decreases of network hashing rate.
+
+The current block reward schedule:
+
+1–99,999: 0–1,000,000 Dogecoin 
+
+100,000–144,999: 0–500,000 Dogecoin
+
+145,000–199,999: 250,000 Dogecoin
+
+200,000–299,999: 125,000 Dogecoin
+
+300,000–399,999: 62,500 Dogecoin
+
+400,000–499,999: 31,250 Dogecoin
+
+500,000–599,999: 15,625 Dogecoin
+
+600,000+: 10,000 Dogecoin
+
+The original block reward schedule, with one-minute block targets and four-hour difficulty readjustment:
+
+1–99,999: 0–1,000,000 Dogecoin 
+
+100,000–199,999: 0–500,000 Dogecoin
+
+200,000–299,999: 0–250,000 Dogecoin
+
+300,000–399,999: 0–125,000 Dogecoin
+
+400,000–499,999: 0–62,500 Dogecoin
+
+500,000–599,999: 0–31,250 Dogecoin
+
+600,000+: 10,000 Dogecoin
+
+### Wow plz make dogecoind/dogecoin-cli/dogecoin-qt
+
+  The following are developer notes on how to build Dogecoin on your native platform. They are not complete guides, but include notes on the necessary libraries, compile flags, etc.
+
+  - [OSX Build Notes](doc/build-osx.md)
+  - [Unix Build Notes](doc/build-unix.md)
+  - [Windows Build Notes](doc/build-msw.md)
+
+### Such ports
+RPC 22555
+P2P 22556
+
+![](http://dogesay.com/wow//////such/coin)
+
+Translations
+------------
+
+Changes to translations, as well as new translations, can be submitted to
+[Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+
+Periodically the translations are pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+If the changes are Dogecoin specific, they can be submitted as pull requests against this repository.
+If it is a general translation, consider submitting it through upstream, as we will pull these changes later on.
+
+Development tips and tricks
+---------------------------
+
+**compiling for debugging**
+
+Run configure with the --enable-debug option, then make. Or run configure with
+CXXFLAGS="-g -ggdb -O0" or whatever debug flags you need.
+
+**debug.log**
+
+If the code is behaving strangely, take a look in the debug.log file in the data directory;
+error and debugging messages are written there.
+
+The -debug=... command-line option controls debugging; running with just -debug will turn
+on all categories (and give you a very large debug.log file).
+
+The Qt code routes qDebug() output to debug.log under category "qt": run with -debug=qt
+to see it.
+
+**testnet and regtest modes**
+
+Run with the -testnet option to run with "play dogecoins" on the test network, if you
+are testing multi-machine code that needs to operate across the internet.
+
+If you are testing something that can run on one machine, run with the -regtest option.
+In regression test mode, blocks can be created on-demand; see qa/rpc-tests/ for tests
+that run in -regtest mode.
+
+**DEBUG_LOCKORDER**
+
+Dogecoin Core is a multithreaded application, and deadlocks or other multithreading bugs
+can be very difficult to track down. Compiling with -DDEBUG_LOCKORDER (configure
+CXXFLAGS="-DDEBUG_LOCKORDER -g") inserts run-time checks to keep track of which locks
+are held, and adds warnings to the debug.log file if inconsistencies are detected.
+
+## Go Ethereum
+
+Official golang implementation of the Ethereum protocol.
+
+[![API Reference](
+https://camo.githubusercontent.com/915b7be44ada53c290eb157634330494ebe3e30a/68747470733a2f2f676f646f632e6f72672f6769746875622e636f6d2f676f6c616e672f6764646f3f7374617475732e737667
+)](https://godoc.org/github.com/ethereum/go-ethereum)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ethereum/go-ethereum?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
+Automated builds are available for stable releases and the unstable master branch.
+Binary archives are published at https://geth.ethereum.org/downloads/.
+
+## Building the source
+
+For prerequisites and detailed build instructions please read the
+[Installation Instructions](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum)
+on the wiki.
+
+Building geth requires both a Go (version 1.7 or later) and a C compiler.
+You can install them using your favourite package manager.
+Once the dependencies are installed, run
+
+    make geth
+
+or, to build the full suite of utilities:
+
+    make all
+
+## Executables
+
+The go-ethereum project comes with several wrappers/executables found in the `cmd` directory.
+
+| Command    | Description |
+|:----------:|-------------|
+| **`geth`** | Our main Ethereum CLI client. It is the entry point into the Ethereum network (main-, test- or private net), capable of running as a full node (default) archive node (retaining all historical state) or a light node (retrieving data live). It can be used by other processes as a gateway into the Ethereum network via JSON RPC endpoints exposed on top of HTTP, WebSocket and/or IPC transports. `geth --help` and the [CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options) for command line options. |
+| `abigen` | Source code generator to convert Ethereum contract definitions into easy to use, compile-time type-safe Go packages. It operates on plain [Ethereum contract ABIs](https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI) with expanded functionality if the contract bytecode is also available. However it also accepts Solidity source files, making development much more streamlined. Please see our [Native DApps](https://github.com/ethereum/go-ethereum/wiki/Native-DApps:-Go-bindings-to-Ethereum-contracts) wiki page for details. |
+| `bootnode` | Stripped down version of our Ethereum client implementation that only takes part in the network node discovery protocol, but does not run any of the higher level application protocols. It can be used as a lightweight bootstrap node to aid in finding peers in private networks. |
+| `evm` | Developer utility version of the EVM (Ethereum Virtual Machine) that is capable of running bytecode snippets within a configurable environment and execution mode. Its purpose is to allow insolated, fine-grained debugging of EVM opcodes (e.g. `evm --code 60ff60ff --debug`). |
+| `gethrpctest` | Developer utility tool to support our [ethereum/rpc-test](https://github.com/ethereum/rpc-tests) test suite which validates baseline conformity to the [Ethereum JSON RPC](https://github.com/ethereum/wiki/wiki/JSON-RPC) specs. Please see the [test suite's readme](https://github.com/ethereum/rpc-tests/blob/master/README.md) for details. |
+| `rlpdump` | Developer utility tool to convert binary RLP ([Recursive Length Prefix](https://github.com/ethereum/wiki/wiki/RLP)) dumps (data encoding used by the Ethereum protocol both network as well as consensus wise) to user friendlier hierarchical representation (e.g. `rlpdump --hex CE0183FFFFFFC4C304050583616263`). |
+| `swarm`    | swarm daemon and tools. This is the entrypoint for the swarm network. `swarm --help` for command line options and subcommands. See https://swarm-guide.readthedocs.io for swarm documentation. |
+
+## Running geth
+
+Going through all the possible command line flags is out of scope here (please consult our
+[CLI Wiki page](https://github.com/ethereum/go-ethereum/wiki/Command-Line-Options)), but we've
+enumerated a few common parameter combos to get you up to speed quickly on how you can run your
+own Geth instance.
+
+### Full node on the main Ethereum network
+
+By far the most common scenario is people wanting to simply interact with the Ethereum network:
+create accounts; transfer funds; deploy and interact with contracts. For this particular use-case
+the user doesn't care about years-old historical data, so we can fast-sync quickly to the current
+state of the network. To do so:
+
+```
+$ geth --fast --cache=512 console
+```
+
+This command will:
+
+ * Start geth in fast sync mode (`--fast`), causing it to download more data in exchange for avoiding
+   processing the entire history of the Ethereum network, which is very CPU intensive.
+ * Bump the memory allowance of the database to 512MB (`--cache=512`), which can help significantly in
+   sync times especially for HDD users. This flag is optional and you can set it as high or as low as
+   you'd like, though we'd recommend the 512MB - 2GB range.
+ * Start up Geth's built-in interactive [JavaScript console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console),
+   (via the trailing `console` subcommand) through which you can invoke all official [`web3` methods](https://github.com/ethereum/wiki/wiki/JavaScript-API)
+   as well as Geth's own [management APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs).
+   This too is optional and if you leave it out you can always attach to an already running Geth instance
+   with `geth attach`.
+
+### Full node on the Ethereum test network
+
+Transitioning towards developers, if you'd like to play around with creating Ethereum contracts, you
+almost certainly would like to do that without any real money involved until you get the hang of the
+entire system. In other words, instead of attaching to the main network, you want to join the **test**
+network with your node, which is fully equivalent to the main network, but with play-Ether only.
+
+```
+$ geth --testnet --fast --cache=512 console
+```
+
+The `--fast`, `--cache` flags and `console` subcommand have the exact same meaning as above and they
+are equally useful on the testnet too. Please see above for their explanations if you've skipped to
+here.
+
+Specifying the `--testnet` flag however will reconfigure your Geth instance a bit:
+
+ * Instead of using the default data directory (`~/.ethereum` on Linux for example), Geth will nest
+   itself one level deeper into a `testnet` subfolder (`~/.ethereum/testnet` on Linux). Note, on OSX
+   and Linux this also means that attaching to a running testnet node requires the use of a custom
+   endpoint since `geth attach` will try to attach to a production node endpoint by default. E.g.
+   `geth attach <datadir>/testnet/geth.ipc`. Windows users are not affected by this.
+ * Instead of connecting the main Ethereum network, the client will connect to the test network,
+   which uses different P2P bootnodes, different network IDs and genesis states.
+   
+*Note: Although there are some internal protective measures to prevent transactions from crossing
+over between the main network and test network, you should make sure to always use separate accounts
+for play-money and real-money. Unless you manually move accounts, Geth will by default correctly
+separate the two networks and will not make any accounts available between them.*
+
+### Configuration
+
+As an alternative to passing the numerous flags to the `geth` binary, you can also pass a configuration file via:
+
+```
+$ geth --config /path/to/your_config.toml
+```
+
+To get an idea how the file should look like you can use the `dumpconfig` subcommand to export your existing configuration:
+
+```
+$ geth --your-favourite-flags dumpconfig
+```
+
+*Note: This works only with geth v1.6.0 and above*
+
+#### Docker quick start
+
+One of the quickest ways to get Ethereum up and running on your machine is by using Docker:
+
+```
+docker run -d --name ethereum-node -v /Users/alice/ethereum:/root \
+           -p 8545:8545 -p 30303:30303 \
+           ethereum/client-go --fast --cache=512
+```
+
+This will start geth in fast sync mode with a DB memory allowance of 512MB just as the above command does.  It will also create a persistent volume in your home directory for saving your blockchain as well as map the default ports. There is also an `alpine` tag available for a slim version of the image.
+
+### Programatically interfacing Geth nodes
+
+As a developer, sooner rather than later you'll want to start interacting with Geth and the Ethereum
+network via your own programs and not manually through the console. To aid this, Geth has built in
+support for a JSON-RPC based APIs ([standard APIs](https://github.com/ethereum/wiki/wiki/JSON-RPC) and
+[Geth specific APIs](https://github.com/ethereum/go-ethereum/wiki/Management-APIs)). These can be
+exposed via HTTP, WebSockets and IPC (unix sockets on unix based platforms, and named pipes on Windows).
+
+The IPC interface is enabled by default and exposes all the APIs supported by Geth, whereas the HTTP
+and WS interfaces need to manually be enabled and only expose a subset of APIs due to security reasons.
+These can be turned on/off and configured as you'd expect.
+
+HTTP based JSON-RPC API options:
+
+  * `--rpc` Enable the HTTP-RPC server
+  * `--rpcaddr` HTTP-RPC server listening interface (default: "localhost")
+  * `--rpcport` HTTP-RPC server listening port (default: 8545)
+  * `--rpcapi` API's offered over the HTTP-RPC interface (default: "eth,net,web3")
+  * `--rpccorsdomain` Comma separated list of domains from which to accept cross origin requests (browser enforced)
+  * `--ws` Enable the WS-RPC server
+  * `--wsaddr` WS-RPC server listening interface (default: "localhost")
+  * `--wsport` WS-RPC server listening port (default: 8546)
+  * `--wsapi` API's offered over the WS-RPC interface (default: "eth,net,web3")
+  * `--wsorigins` Origins from which to accept websockets requests
+  * `--ipcdisable` Disable the IPC-RPC server
+  * `--ipcapi` API's offered over the IPC-RPC interface (default: "admin,debug,eth,miner,net,personal,shh,txpool,web3")
+  * `--ipcpath` Filename for IPC socket/pipe within the datadir (explicit paths escape it)
+
+You'll need to use your own programming environments' capabilities (libraries, tools, etc) to connect
+via HTTP, WS or IPC to a Geth node configured with the above flags and you'll need to speak [JSON-RPC](http://www.jsonrpc.org/specification)
+on all transports. You can reuse the same connection for multiple requests!
+
+**Note: Please understand the security implications of opening up an HTTP/WS based transport before
+doing so! Hackers on the internet are actively trying to subvert Ethereum nodes with exposed APIs!
+Further, all browser tabs can access locally running webservers, so malicious webpages could try to
+subvert locally available APIs!**
+
+### Operating a private network
+
+Maintaining your own private network is more involved as a lot of configurations taken for granted in
+the official networks need to be manually set up.
+
+#### Defining the private genesis state
+
+First, you'll need to create the genesis state of your networks, which all nodes need to be aware of
+and agree upon. This consists of a small JSON file (e.g. call it `genesis.json`):
+
+```json
+{
+  "config": {
+        "chainId": 0,
+        "homesteadBlock": 0,
+        "eip155Block": 0,
+        "eip158Block": 0
+    },
+  "alloc"      : {},
+  "coinbase"   : "0x0000000000000000000000000000000000000000",
+  "difficulty" : "0x20000",
+  "extraData"  : "",
+  "gasLimit"   : "0x2fefd8",
+  "nonce"      : "0x0000000000000042",
+  "mixhash"    : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "parentHash" : "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "timestamp"  : "0x00"
+}
+```
+
+The above fields should be fine for most purposes, although we'd recommend changing the `nonce` to
+some random value so you prevent unknown remote nodes from being able to connect to you. If you'd
+like to pre-fund some accounts for easier testing, you can populate the `alloc` field with account
+configs:
+
+```json
+"alloc": {
+  "0x0000000000000000000000000000000000000001": {"balance": "111111111"},
+  "0x0000000000000000000000000000000000000002": {"balance": "222222222"}
+}
+```
+
+With the genesis state defined in the above JSON file, you'll need to initialize **every** Geth node
+with it prior to starting it up to ensure all blockchain parameters are correctly set:
+
+```
+$ geth init path/to/genesis.json
+```
+
+#### Creating the rendezvous point
+
+With all nodes that you want to run initialized to the desired genesis state, you'll need to start a
+bootstrap node that others can use to find each other in your network and/or over the internet. The
+clean way is to configure and run a dedicated bootnode:
+
+```
+$ bootnode --genkey=boot.key
+$ bootnode --nodekey=boot.key
+```
+
+With the bootnode online, it will display an [`enode` URL](https://github.com/ethereum/wiki/wiki/enode-url-format)
+that other nodes can use to connect to it and exchange peer information. Make sure to replace the
+displayed IP address information (most probably `[::]`) with your externally accessible IP to get the
+actual `enode` URL.
+
+*Note: You could also use a full fledged Geth node as a bootnode, but it's the less recommended way.*
+
+#### Starting up your member nodes
+
+With the bootnode operational and externally reachable (you can try `telnet <ip> <port>` to ensure
+it's indeed reachable), start every subsequent Geth node pointed to the bootnode for peer discovery
+via the `--bootnodes` flag. It will probably also be desirable to keep the data directory of your
+private network separated, so do also specify a custom `--datadir` flag.
+
+```
+$ geth --datadir=path/to/custom/data/folder --bootnodes=<bootnode-enode-url-from-above>
+```
+
+*Note: Since your network will be completely cut off from the main and test networks, you'll also
+need to configure a miner to process transactions and create new blocks for you.*
+
+#### Running a private miner
+
+Mining on the public Ethereum network is a complex task as it's only feasible using GPUs, requiring
+an OpenCL or CUDA enabled `ethminer` instance. For information on such a setup, please consult the
+[EtherMining subreddit](https://www.reddit.com/r/EtherMining/) and the [Genoil miner](https://github.com/Genoil/cpp-ethereum)
+repository.
+
+In a private network setting however, a single CPU miner instance is more than enough for practical
+purposes as it can produce a stable stream of blocks at the correct intervals without needing heavy
+resources (consider running on a single thread, no need for multiple ones either). To start a Geth
+instance for mining, run it with all your usual flags, extended by:
+
+```
+$ geth <usual-flags> --mine --minerthreads=1 --etherbase=0x0000000000000000000000000000000000000000
+```
+
+Which will start mining bocks and transactions on a single CPU thread, crediting all proceedings to
+the account specified by `--etherbase`. You can further tune the mining by changing the default gas
+limit blocks converge to (`--targetgaslimit`) and the price transactions are accepted at (`--gasprice`).
+
+## Contribution
+
+Thank you for considering to help out with the source code! We welcome contributions from
+anyone on the internet, and are grateful for even the smallest of fixes!
+
+If you'd like to contribute to go-ethereum, please fork, fix, commit and send a pull request
+for the maintainers to review and merge into the main code base. If you wish to submit more
+complex changes though, please check up with the core devs first on [our gitter channel](https://gitter.im/ethereum/go-ethereum)
+to ensure those changes are in line with the general philosophy of the project and/or get some
+early feedback which can make both your efforts much lighter as well as our review and merge
+procedures quick and simple.
+
+Please make sure your contributions adhere to our coding guidelines:
+
+ * Code must adhere to the official Go [formatting](https://golang.org/doc/effective_go.html#formatting) guidelines (i.e. uses [gofmt](https://golang.org/cmd/gofmt/)).
+ * Code must be documented adhering to the official Go [commentary](https://golang.org/doc/effective_go.html#commentary) guidelines.
+ * Pull requests need to be based on and opened against the `master` branch.
+ * Commit messages should be prefixed with the package(s) they modify.
+   * E.g. "eth, rpc: make trace configs optional"
+
+Please see the [Developers' Guide](https://github.com/ethereum/go-ethereum/wiki/Developers'-Guide)
+for more details on configuring your environment, managing project dependencies and testing procedures.
+
+## License
+
+The go-ethereum library (i.e. all code outside of the `cmd` directory) is licensed under the
+[GNU Lesser General Public License v3.0](https://www.gnu.org/licenses/lgpl-3.0.en.html), also
+included in our repository in the `COPYING.LESSER` file.
+
+The go-ethereum binaries (i.e. all code inside of the `cmd` directory) is licensed under the
+[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.en.html), also included
+in our repository in the `COPYING` file.
+
+![Ripple](/images/ripple.png)
+
+**Do you work at a digital asset exchange or wallet provider?** 
+
+Please [contact us](mailto:support@ripple.com). We can help guide your integration.
+
+# What is Ripple?
+Ripple is a network of computers which use the [Ripple consensus algorithm](https://www.youtube.com/watch?v=pj1QVb1vlC0) to atomically settle and record
+transactions on a secure distributed database, the Ripple Consensus Ledger
+(RCL). Because of its distributed nature, the RCL offers transaction immutability
+without a central operator. The RCL contains a built-in currency exchange and its
+path-finding algorithm finds competitive exchange rates across order books
+and currency pairs.
+
+### Key Features
+- **Distributed**
+  - Direct account-to-account settlement with no central operator
+  - Decentralized global market for competitive FX
+- **Secure**
+  - Transactions are cryptographically signed using ECDSA or Ed25519
+  - Multi-signing capabilities
+- **Scalable**
+  - Capacity to process the world’s cross-border payments volume
+  - Easy access to liquidity through a competitive FX marketplace
+
+## Cross-border payments
+Ripple enables banks to settle cross-border payments in real-time, with
+end-to-end transparency, and at lower costs. Banks can provide liquidity
+for FX themselves or source it from third parties.
+
+As Ripple adoption grows, so do the number of currencies and counterparties.
+Liquidity providers need to maintain accounts with each counterparty for
+each currency – a capital- and time-intensive endeavor that spreads liquidity
+thin. Further, some transactions, such as exotic currency trades, will require
+multiple trading parties, who each layer costs to the transaction. Thin
+liquidity and many intermediary trading parties make competitive pricing
+challenging.
+
+![Flow - Direct](images/flow1.png)
+
+### XRP as a Bridge Currency
+Ripple can bridge even exotic currency pairs directly through XRP. Similar to
+USD in today’s currency market, XRP allows liquidity providers to focus on
+offering competitive FX rates on fewer pairs and adding depth to order books.
+Unlike USD, trading through XRP does not require bank accounts, service fees,
+counterparty risk, or additional operational costs. By using XRP, liquidity
+providers can specialize in certain currency corridors, reduce operational
+costs, and ultimately, offer more competitive FX pricing.
+
+![Flow - Bridged over XRP](images/flow2.png)
+
+# rippled - Ripple server
+`rippled` is the reference server implementation of the Ripple
+protocol. To learn more about how to build and run a `rippled`
+server, visit https://ripple.com/build/rippled-setup/
+
+[![travis-ci.org: Build Status](https://travis-ci.org/ripple/rippled.png?branch=develop)](https://travis-ci.org/ripple/rippled)
+[![codecov.io: Code Coverage](https://codecov.io/gh/ripple/rippled/branch/develop/graph/badge.svg)](https://codecov.io/gh/ripple/rippled)
+
+### License
+`rippled` is open source and permissively licensed under the
+ISC license. See the LICENSE file for more details.
+
+#### Repository Contents
+
+| Folder  | Contents |
+|---------|----------|
+| ./bin   | Scripts and data files for Ripple integrators. |
+| ./build | Intermediate and final build outputs.          |
+| ./Builds| Platform or IDE-specific project files.        |
+| ./doc   | Documentation and example configuration files. |
+| ./src   | Source code.                                   |
+
+Some of the directories under `src` are external repositories inlined via
+git-subtree. See the corresponding README for more details.
+
+## For more information:
+
+* [Ripple Knowledge Center](https://ripple.com/learn/)
+* [Ripple Developer Center](https://ripple.com/build/)
+* [Ripple Whitepapers & Reports](https://ripple.com/whitepapers-reports/)
+  * [Ripple Consensus Whitepaper](https://ripple.com/consensus-whitepaper/)
+  * [Ripple Solutions Guide](https://ripple.com/files/ripple_solutions_guide.pdf)
+
+To learn about how Ripple is transforming global payments visit
+[https://ripple.com/contact/](https://ripple.com/contact/)
+
+- - -
+
+Copyright © 2017, Ripple Labs. All rights reserved.
+
+Portions of this document, including but not limited to the Ripple logo,
+images and image templates are the property of Ripple Labs and cannot be
+copied or used without permission.
+
+NEM Community Client (NCC)
+====================
+[![Build Status](https://travis-ci.org/NemProject/NemCommunityClient.svg?branch=master)](https://travis-ci.org/NemProject/NemCommunityClient)
+
+NCC is the initial client provided with NEM. It provides a web interface for managing wallets and interacting with the NEM Infrastructure Server (NIS).
+
+NCC Packages
+------------
+
+There are two NCC maven packages:
+
+- nem-client-api: Contains all NCC functionality as well as the web UX.
+- nem-monitor: Monitors NCC and local NIS, provides visual feedback on actual status of those apps.
+
+There two more packages
+- nem-client-download: Used by WebStart to download NCC and NIS. (deprecated, switched to installer version)
+- nem-console: A command-line tool providing utility functionality.
+
+Building
+--------
+
+nem.core is required to build NCC. Most recent version, can be found [here](http://bob.nem.ninja)
+nem.core documentation can be found [here](http://bob.nem.ninja/org.nem.core/)
+
+Running NCC Locally
+-------------------
+
+In order to run the client with full functionality, a NEM Infrastructure Server (NIS) instance should be running
+on the local machine.
+
+The NCC client can be started by running the org.nem.deploy.CommonStarter class.
+
+The monitor programm is started via org.nem.monitor.NemMonitor
+
+NCC REST API
+------------
+
+The NCC API is available as a swagger.json file [here](docs/ncc-api-swagger.json).
+
+A rendered version is available [here](http://nem.pucchiwerk.eu/ncc/api/).
+
+(The deprecated version of the NCC REST API can be found [here](docs/api.md)).
+
+Generating JavaDoc Documentation
+--------------------------------
+The javadoc documentation can be created via the maven goal "javadoc:javadoc" on the project "nem-client-api".
+
+Pull Requests
+-------------
+
+NCC is fully open-sourced and looking for contributors. Please take a fork and add a feature :).
+
+The NEM core development team will be managing pull requests into master.
+Please try to follow the guidelines outlined [here](http://www.booleanknot.com/blog/2013/09/07/pull-requests.html).
+
+Coding Guidelines
+-----------------
+
+Please use the intellij settings checked in under settings/nem_project_settings.jar. A non-comprehensive list of style guidelines follow, but the checked in settings should take precedence.  
+
+### Member Naming
+- Use lowerCamelCase.
+- Prefix booleans with "is" / "has" / "are".
+- Precede access of instance members with "this.".
+- Camel case acronyms at least three letters (i.e. prefer "Nis" to "NIS").
+
+### Braces
+- Always use braces (even for single line statement bodies).
+- Follow '}' with a blank line.
+- Do not precede '}' with a blank line.
+
+### Imports
+- Wildcard import package if more than one class is used from a package.
+- Sort imports alphabetically.
+
+### Documentation
+- Document all public and protected members.
+- Getter documentation should start with "Gets".
+- All documentation should start with capital letter and end with period (for members documentation too).
+
+### Unit Tests
+- Try to avoid testing composite classes.
+- Use Act / Arrange / Assert.
+
+### Other
+- Use the final keyword aggressively.
+- Avoid the use of trailing whitespace.
+- Keep functions short and understandable :).
+- Do not introduce consecutive blank lines.
+
+Dash Core staging tree 0.12.1
+===============================
+
+`master:` [![Build Status](https://travis-ci.org/dashpay/dash.svg?branch=master)](https://travis-ci.org/dashpay/dash) `v0.12.0.x:` [![Build Status](https://travis-ci.org/dashpay/dash.svg?branch=v0.12.0.x)](https://travis-ci.org/dashpay/dash/branches) `v0.12.1.x:` [![Build Status](https://travis-ci.org/dashpay/dash.svg?branch=v0.12.1.x)](https://travis-ci.org/dashpay/dash/branches)
+
+https://www.dash.org
+
+
+What is Dash?
+----------------
+
+Dash is an experimental new digital currency that enables anonymous, instant
+payments to anyone, anywhere in the world. Dash uses peer-to-peer technology
+to operate with no central authority: managing transactions and issuing money
+are carried out collectively by the network. Dash Core is the name of the open
+source software which enables the use of this currency.
+
+For more information, as well as an immediately useable, binary version of
+the Dash Core software, see https://www.dash.org/get-dash/.
+
+
+License
+-------
+
+Dash Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is meant to be stable. Development is normally done in separate branches.
+[Tags](https://github.com/dashpay/dash/tags) are created to indicate new official,
+stable release versions of Dash Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write [unit tests](/doc/unit-tests.md) for new code, and to
+submit new unit tests for old code. Unit tests can be compiled and run
+(assuming they weren't disabled in configure) with: `make check`
+
+There are also [regression and integration tests](/qa) of the RPC interface, written
+in Python, that are run automatically on the build server.
+These tests can be run (if the [test dependencies](/qa) are installed) with: `qa/pull-tester/rpc-tests.py`
+
+The Travis CI system makes sure that every pull request is built for Windows
+and Linux, OS X, and that unit and sanity tests are automatically run.
+
+### Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+Translations
+------------
+
+Changes to translations as well as new translations can be submitted to
+[Dash Core's Transifex page](https://www.transifex.com/projects/p/dash/).
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
+
+Translators should also follow the [forum](https://www.dash.org/forum/topic/dash-worldwide-collaboration.88/).
+
+# IOTA App
+
+## Prerequisites
+
+1. Download [NodeJS](https://nodejs.org/en/download/)
+
+2. Install [Electron](http://electron.atom.io):
+
+  ```
+  npm install -g electron-prebuilt
+  ```
+
+3. Install [Bower](https://bower.io/):
+
+  ```
+  npm install -g bower
+  ```
+
+#### Windows Users Only
+
+  Run the following command as Administrator:
+
+  ```
+  npm install -g --production windows-build-tools
+  ```
+
+#### Compiling
+
+If you wish to compile the app, install the following also: 
+
+1. Install [Electron Builder](https://github.com/electron-userland/electron-builder)
+
+ Electron Builder is used behind the scenes. Read their [instructions](https://github.com/electron-userland/electron-builder/wiki/Multi-Platform-Build) on how to set up your system.
+
+2. Install [Docker](https://www.docker.com)
+
+## Instructions
+
+1. Clone this repository:
+
+  ```
+  git clone https://github.com/iotaledger/wallet
+  ```
+
+2. Go to the `wallet` directory:
+
+  ```
+  cd wallet
+  ```
+
+3. Clone iri: 
+
+  ```
+  git clone https://github.com/iotaledger/iri
+  ```
+
+  Note: make sure compiled iri.jar is in the `iri` folder.
+  
+4. Install components
+
+  ```
+  npm install
+  ```
+
+5. Run the app:
+
+  ```
+  npm start
+  ```
+
+6. If you wish to compile the app: 
+
+  ```
+  npm run compile
+  ```
+
+  If you'd like to create a package only for a specific OS, you can do so like this: 
+
+  ```
+  npm run compile:win
+  npm run compile:mac
+  npm run compile:lin
+  ```
+
+  Compiled binaries are found in the `out` directory.
+
+#### Testnet
+
+To build testnet binaries, rename `package.testnet.json` to `package.json` and follow instructions as above. Make sure the jar is named `iri-testnet.jar`.
+
+# Monero
+
+Copyright (c) 2014-2017, The Monero Project
+
+## Development Resources
+
+- Web: [getmonero.org](https://getmonero.org)
+- Forum: [forum.getmonero.org](https://forum.getmonero.org)
+- Mail: [dev@getmonero.org](mailto:dev@getmonero.org)
+- GitHub: [https://github.com/monero-project/monero](https://github.com/monero-project/monero)
+- IRC: [#monero-dev on Freenode](http://webchat.freenode.net/?randomnick=1&channels=%23monero-dev&prompt=1&uio=d4)
+
+## Build
+
+| Operating System      | Processor | Status |
+| --------------------- | -------- |--------|
+| Ubuntu 16.04          |  i686    | [![Ubuntu 16.04 i686](https://build.getmonero.org/png?builder=monero-static-ubuntu-i686)](https://build.getmonero.org/builders/monero-static-ubuntu-i686)
+| Ubuntu 16.04          |  amd64   | [![Ubuntu 16.04 amd64](https://build.getmonero.org/png?builder=monero-static-ubuntu-amd64)](https://build.getmonero.org/builders/monero-static-ubuntu-amd64)
+| Ubuntu 16.04          |  armv7   | [![Ubuntu 16.04 armv7](https://build.getmonero.org/png?builder=monero-static-ubuntu-arm7)](https://build.getmonero.org/builders/monero-static-ubuntu-arm7)
+| Debian Stable         |  armv8   | [![Debian armv8](https://build.getmonero.org/png?builder=monero-static-debian-armv8)](https://build.getmonero.org/builders/monero-static-debian-armv8)
+| OSX 10.10             |  amd64   | [![OSX 10.10 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.10)](https://build.getmonero.org/builders/monero-static-osx-10.10)
+| OSX 10.11             |  amd64   | [![OSX 10.11 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.11)](https://build.getmonero.org/builders/monero-static-osx-10.11)
+| OSX 10.12             |  amd64   | [![OSX 10.12 amd64](https://build.getmonero.org/png?builder=monero-static-osx-10.12)](https://build.getmonero.org/builders/monero-static-osx-10.12)
+| FreeBSD 11            |  amd64   | [![FreeBSD 11 amd64](https://build.getmonero.org/png?builder=monero-static-freebsd64)](https://build.getmonero.org/builders/monero-static-freebsd64)
+| DragonFly BSD 4.6     |  amd64   | [![DragonFly BSD amd64](https://build.getmonero.org/png?builder=monero-static-dragonflybsd-amd64)](https://build.getmonero.org/builders/monero-static-dragonflybsd-amd64)
+| Windows (MSYS2/MinGW) |  i686    | [![Windows (MSYS2/MinGW) i686](https://build.getmonero.org/png?builder=monero-static-win32)](https://build.getmonero.org/builders/monero-static-win32)
+| Windows (MSYS2/MinGW) |  amd64   | [![Windows (MSYS2/MinGW) amd64](https://build.getmonero.org/png?builder=monero-static-win64)](https://build.getmonero.org/builders/monero-static-win64)
+
+## Coverage
+
+| Type      | Status |
+|-----------|--------|
+| Coverity  | [![Coverity Status](https://scan.coverity.com/projects/9657/badge.svg)](https://scan.coverity.com/projects/9657/)
+| Coveralls | [![Coveralls Status](https://coveralls.io/repos/github/monero-project/monero/badge.svg?branch=master)](https://coveralls.io/github/monero-project/monero?branch=master)
+| License   | [![License](https://img.shields.io/badge/license-BSD3-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+
+## Introduction
+
+Monero is a private, secure, untraceable, decentralised digital currency. You are your bank, you control your funds, and nobody can trace your transfers unless you allow them to do so.
+
+**Privacy:** Monero uses a cryptographically sound system to allow you to send and receive funds without your transactions being easily revealed on the blockchain (the ledger of transactions that everyone has). This ensures that your purchases, receipts, and all transfers remain absolutely private by default.
+
+**Security:** Using the power of a distributed peer-to-peer consensus network, every transaction on the network is cryptographically secured. Individual wallets have a 25 word mnemonic seed that is only displayed once, and can be written down to backup the wallet. Wallet files are encrypted with a passphrase to ensure they are useless if stolen.
+
+**Untraceability:** By taking advantage of ring signatures, a special property of a certain type of cryptography, Monero is able to ensure that transactions are not only untraceable, but have an optional measure of ambiguity that ensures that transactions cannot easily be tied back to an individual user or computer.
+
+## About this Project
+
+This is the core implementation of Monero. It is open source and completely free to use without restrictions, except for those specified in the license agreement below. There are no restrictions on anyone creating an alternative implementation of Monero that uses the protocol and network in a compatible manner.
+
+As with many development projects, the repository on Github is considered to be the "staging" area for the latest changes. Before changes are merged into that branch on the main repository, they are tested by individual developers in their own branches, submitted as a pull request, and then subsequently tested by contributors who focus on testing and code reviews. That having been said, the repository should be carefully considered before using it in a production environment, unless there is a patch in the repository for a particular show-stopping issue you are experiencing. It is generally a better idea to use a tagged release for stability.
+
+**Anyone is welcome to contribute to Monero's codebase!** If you have a fix or code change, feel free to submit it as a pull request directly to the "master" branch. In cases where the change is relatively small or does not affect other parts of the codebase it may be merged in immediately by any one of the collaborators. On the other hand, if the change is particularly large or complex, it is expected that it will be discussed at length either well in advance of the pull request being submitted, or even directly on the pull request.
+
+## Supporting the Project
+
+Monero development can be supported directly through donations.
+
+Both Monero and Bitcoin donations can be made to donate.getmonero.org if using a client that supports the [OpenAlias](https://openalias.org) standard
+
+The Monero donation address is: `44AFFq5kSiGBoZ4NMDwYtN18obc8AemS33DBLWs3H7otXft3XjrpDtQGv7SqSsaBYBb98uNbr2VBBEt7f2wfn3RVGQBEP3A` (viewkey: `f359631075708155cc3d92a32b75a7d02a5dcf27756707b47a2b31b21c389501`)
+
+The Bitcoin donation address is: `1KTexdemPdxSBcG55heUuTjDRYqbC5ZL8H`
+
+*Note: you can easily donate XMR to the Monero donation address by using the `donate` command. Type `help` in the command-line wallet for details.*
+
+Core development funding and/or some supporting services are also graciously provided by sponsors:
+
+[<img width="80" src="https://static.getmonero.org/images/sponsors/mymonero.png"/>](https://mymonero.com)
+[<img width="150" src="https://static.getmonero.org/images/sponsors/kitware.png?1"/>](http://kitware.com)
+[<img width="100" src="https://static.getmonero.org/images/sponsors/dome9.png"/>](http://dome9.com)
+[<img width="150" src="https://static.getmonero.org/images/sponsors/araxis.png"/>](http://araxis.com)
+[<img width="150" src="https://static.getmonero.org/images/sponsors/jetbrains.png"/>](http://www.jetbrains.com/)
+[<img width="150" src="https://static.getmonero.org/images/sponsors/navicat.png"/>](http://www.navicat.com/)
+[<img width="150" src="https://static.getmonero.org/images/sponsors/symas.png"/>](http://www.symas.com/)
+
+There are also several mining pools that kindly donate a portion of their fees, [a list of them can be found on our Bitcointalk post](https://bitcointalk.org/index.php?topic=583449.0).
+
+## License
+
+See [LICENSE](LICENSE).
+
+# Contributing
+
+If you want to help out, see [CONTRIBUTING](CONTRIBUTING.md) for a set of guidelines.
+
+## Vulnerability Response Process
+
+See [Vulnerability Response Process](VULNERABILITY_RESPONSE_PROCESS.md).
+
+## Monero software updates and consensus protocol changes (hard fork schedule)
+
+Monero uses a fixed-schedule hard fork mechanism to implement new features. This means that users of Monero (end users and service providers) need to run current versions and update their software on a regular schedule. Here is the current schedule, versions, and compatibility.
+Dates are provided in the format YYYY-MM-DD. 
+
+
+| Fork Date              | Consensus version | Minimum Monero Version | Recommended Monero Version | Details            |  
+| ----------------- | ----------------- | ---------------------- | -------------------------- | ------------------ |
+| 2016-09-21        | v3                | v0.9.4                 | v0.10.0                    | Splits coinbase into denominations  |
+| 2017-01-05        | v4                | v0.10.1                 | v0.10.2.1                   | Allow normal and RingCT transactions |
+| 2017-04-15        | v5                | v0.10.3.0               | v0.10.3.1                    | Adjusted minimum blocksize and fee algorithm      |
+| 2017-09-21        | v6                | Not determined as of 2017-03-27                | Not determined as of 2017-03-27                    | Allow only RingCT transactions      |
+
+## Installing Monero from a Package
+
+Packages are available for
+
+* Ubuntu and [snap supported](https://snapcraft.io/docs/core/install) systems, via a community contributed build.
+
+    snap install monero --beta
+
+Installing a snap is very quick. Snaps are secure. They are isolated with all of their dependencies. Snaps also auto update when a new version is released.
+
+* Arch Linux (via [AUR](https://aur.archlinux.org/)):
+  - Stable release: [`monero`](https://aur.archlinux.org/packages/monero)
+  - Bleeding edge: [`bitmonero-git`](https://aur.archlinux.org/packages/bitmonero-git)
+
+* OS X via [Homebrew](http://brew.sh)
+
+        brew tap sammy007/cryptonight
+        brew install monero --build-from-source
+
+* Docker
+
+        docker build -t monero .
+     
+        # either run in foreground
+        docker run -it -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+
+        # or in background
+        docker run -it -d -v /monero/chain:/root/.bitmonero -v /monero/wallet:/wallet -p 18080:18080 monero
+
+Packaging for your favorite distribution would be a welcome contribution!
+
+## Compiling Monero from Source
+
+### Dependencies
+
+The following table summarizes the tools and libraries required to build.  A
+few of the libraries are also included in this repository (marked as
+"Vendored"). By default, the build uses the library installed on the system,
+and ignores the vendored sources. However, if no library is found installed on
+the system, then the vendored source will be built and used. The vendored
+sources are also used for statically-linked builds because distribution
+packages often include only shared library binaries (`.so`) but not static
+library archives (`.a`).
+
+| Dep            | Min. Version  | Vendored | Debian/Ubuntu Pkg  | Arch Pkg       | Optional | Purpose        |
+| -------------- | ------------- | ---------| ------------------ | -------------- | -------- | -------------- |
+| GCC            | 4.7.3         | NO       | `build-essential`  | `base-devel`   | NO       |                |
+| CMake          | 3.0.0         | NO       | `cmake`            | `cmake`        | NO       |                |
+| pkg-config     | any           | NO       | `pkg-config`       | `base-devel`   | NO       |                |
+| Boost          | 1.58          | NO       | `libboost-all-dev` | `boost`        | NO       | C++ libraries  |
+| OpenSSL        | basically any | NO       | `libssl-dev`       | `openssl`      | NO       | sha256 sum     |
+| libunbound     | 1.4.16        | YES      | `libunbound-dev`   | `unbound`      | NO       | DNS resolver   |
+| libminiupnpc   | 2.0           | YES      | `libminiupnpc-dev` | `miniupnpc`    | YES      | NAT punching   |
+| libunwind      | any           | NO       | `libunwind8-dev`   | `libunwind`    | YES      | Stack traces   |
+| liblzma        | any           | NO       | `liblzma-dev`      | `xz`           | YES      | For libunwind  |
+| ldns           | 1.6.17        | NO       | `libldns-dev`      | `ldns`         | YES      | SSL toolkit    |
+| expat          | 1.1           | NO       | `libexpat1-dev`    | `expat`        | YES      | XML parsing    |
+| GTest          | 1.5           | YES      | `libgtest-dev`^    | `gtest`        | YES      | Test suite     |
+| Doxygen        | any           | NO       | `doxygen`          | `doxygen`      | YES      | Documentation  |
+| Graphviz       | any           | NO       | `graphviz`         | `graphviz`     | YES      | Documentation  |
+
+[^] On Debian/Ubuntu `libgtest-dev` only includes sources and headers. You must
+build the library binary manually. This can be done with the following command ```sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake . && sudo make && sudo mv libg* /usr/lib/ ```
+
+### Build instructions
+
+Monero uses the CMake build system and a top-level [Makefile](Makefile) that
+invokes cmake commands as needed.
+
+#### On Linux and OS X
+
+* Install the dependencies
+* Change to the root of the source code directory and build:
+
+        cd monero
+        make
+
+    *Optional*: If your machine has several cores and enough memory, enable
+    parallel build by running `make -j<number of threads>` instead of `make`. For
+    this to be worthwhile, the machine should have one core and about 2GB of RAM
+    available per thread.
+
+* The resulting executables can be found in `build/release/bin`
+
+* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+
+* Run Monero with `monerod --detach`
+
+* **Optional**: build and run the test suite to verify the binaries:
+
+        make release-test
+
+    *NOTE*: `coretests` test may take a few hours to complete.
+
+* **Optional**: to build binaries suitable for debugging:
+
+         make debug
+
+* **Optional**: to build statically-linked binaries:
+
+         make release-static
+
+* **Optional**: build documentation in `doc/html` (omit `HAVE_DOT=YES` if `graphviz` is not installed):
+
+        HAVE_DOT=YES doxygen Doxyfile
+
+#### On the Raspberry Pi 2
+
+Tested on a Raspberry Pi 2 with a clean install of minimal Debian Jessie from https://www.raspberrypi.org/downloads/raspbian/
+
+* `apt-get update && apt-get upgrade` to install all of the latest software
+
+* Install the dependencies for Monero except libunwind and libboost-all-dev
+
+* Increase the system swap size:
+```	
+	sudo /etc/init.d/dphys-swapfile stop  
+	sudo nano /etc/dphys-swapfile  
+	CONF_SWAPSIZE=1024  
+	sudo /etc/init.d/dphys-swapfile start  
+```
+* Install the latest version of boost (this may first require invoking `apt-get remove --purge libboost*` to remove a previous version if you're not using a clean install):
+```
+	cd  
+	wget https://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.bz2  
+	tar xvfo boost_1_64_0.tar.bz2  
+	cd boost_1_64_0  
+	./bootstrap.sh  
+	sudo ./b2  
+```
+* Wait ~8 hours
+```
+	sudo ./bjam install
+```
+* Wait ~4 hours
+
+* Change to the root of the source code directory and build:
+```
+        cd monero
+        make release
+```
+* Wait ~4 hours
+
+* The resulting executables can be found in `build/release/bin`
+
+* Add `PATH="$PATH:$HOME/monero/build/release/bin"` to `.profile`
+
+* Run Monero with `monerod --detach`
+
+* You may wish to reduce the size of the swap file after the build has finished, and delete the boost directory from your home directory
+
+#### On Windows:
+
+Binaries for Windows are built on Windows using the MinGW toolchain within
+[MSYS2 environment](http://msys2.github.io). The MSYS2 environment emulates a
+POSIX system. The toolchain runs within the environment and *cross-compiles*
+binaries that can run outside of the environment as a regular Windows
+application.
+
+**Preparing the Build Environment**
+
+* Download and install the [MSYS2 installer](http://msys2.github.io), either the 64-bit or the 32-bit package, depending on your system.
+* Open the MSYS shell via the `MSYS2 Shell` shortcut
+* Update packages using pacman:  
+
+        pacman -Syuu  
+
+* Exit the MSYS shell using Alt+F4  
+* Edit the properties for the `MSYS2 Shell` shortcut changing "msys2_shell.bat" to "msys2_shell.cmd -mingw64" for 64-bit builds or "msys2_shell.cmd -mingw32" for 32-bit builds
+* Restart MSYS shell via modified shortcut and update packages again using pacman:  
+
+        pacman -Syuu  
+
+
+* Install dependencies:
+
+    To build for 64-bit Windows:
+
+        pacman -S mingw-w64-x86_64-toolchain make mingw-w64-x86_64-cmake mingw-w64-x86_64-boost
+
+    To build for 32-bit Windows:
+ 
+        pacman -S mingw-w64-i686-toolchain make mingw-w64-i686-cmake mingw-w64-i686-boost
+
+* Open the MingW shell via `MinGW-w64-Win64 Shell` shortcut on 64-bit Windows
+  or `MinGW-w64-Win64 Shell` shortcut on 32-bit Windows. Note that if you are
+  running 64-bit Windows, you will have both 64-bit and 32-bit MinGW shells.
+
+**Building**
+
+* If you are on a 64-bit system, run:
+
+        make release-static-win64
+
+* If you are on a 32-bit system, run:
+
+        make release-static-win32
+
+* The resulting executables can be found in `build/release/bin`
+
+### On FreeBSD:
+
+The project can be built from scratch by following instructions for Linux above. If you are running monero in a jail you need to add the flag: `allow.sysvipc=1` to your jail configuration, otherwise lmdb will throw the error message: `Failed to open lmdb environment: Function not implemented`.
+
+We expect to add Monero into the ports tree in the near future, which will aid in managing installations using ports or packages.
+
+### On OpenBSD:
+
+This has been tested on OpenBSD 5.8.
+
+You will need to add a few packages to your system. `pkg_add db cmake gcc gcc-libs g++ miniupnpc gtest`.
+
+The doxygen and graphviz packages are optional and require the xbase set.
+
+The Boost package has a bug that will prevent librpc.a from building correctly. In order to fix this, you will have to Build boost yourself from scratch. Follow the directions here (under "Building Boost"):
+https://github.com/bitcoin/bitcoin/blob/master/doc/build-openbsd.md
+
+You will have to add the serialization, date_time, and regex modules to Boost when building as they are needed by Monero.
+
+To build: `env CC=egcc CXX=eg++ CPP=ecpp DEVELOPER_LOCAL_TOOLS=1 BOOST_ROOT=/path/to/the/boost/you/built make release-static-64`
+
+### Building Portable Statically Linked Binaries
+
+By default, in either dynamically or statically linked builds, binaries target the specific host processor on which the build happens and are not portable to other processors. Portable binaries can be built using the following targets:
+
+* ```make release-static-64``` builds binaries on Linux on x86_64 portable across POSIX systems on x86_64 processors
+* ```make release-static-32``` builds binaries on Linux on x86_64 or i686 portable across POSIX systems on i686 processors
+* ```make release-static-armv8``` builds binaries on Linux portable across POSIX systems on armv8 processors
+* ```make release-static-armv7``` builds binaries on Linux portable across POSIX systems on armv7 processors
+* ```make release-static-armv6``` builds binaries on Linux portable across POSIX systems on armv6 processors
+* ```make release-static-win64``` builds binaries on 64-bit Windows portable across 64-bit Windows systems
+* ```make release-static-win32``` builds binaries on 64-bit or 32-bit Windows portable across 32-bit Windows systems
+
+## Running monerod
+
+The build places the binary in `bin/` sub-directory within the build directory
+from which cmake was invoked (repository root by default). To run in
+foreground:
+
+    ./bin/monerod
+
+To list all available options, run `./bin/monerod --help`.  Options can be
+specified either on the command line or in a configuration file passed by the
+`--config-file` argument.  To specify an option in the configuration file, add
+a line with the syntax `argumentname=value`, where `argumentname` is the name
+of the argument without the leading dashes, for example `log-level=1`.
+
+To run in background:
+
+    ./bin/monerod --log-file monerod.log --detach
+
+To run as a systemd service, copy
+[monerod.service](utils/systemd/monerod.service) to `/etc/systemd/system/` and
+[monerod.conf](utils/conf/monerod.conf) to `/etc/`. The [example
+service](utils/systemd/monerod.service) assumes that the user `monero` exists
+and its home is the data directory specified in the [example
+config](utils/conf/monerod.conf).
+
+If you're on Mac, you may need to add the `--max-concurrency 1` option to
+monero-wallet-cli, and possibly monerod, if you get crashes refreshing.
+
+## Internationalization
+
+See [README.i18n.md](README.i18n.md).
+
+## Using Tor
+
+While Monero isn't made to integrate with Tor, it can be used wrapped with torsocks, if you add --p2p-bind-ip 127.0.0.1 to the monerod command line. You also want to set DNS requests to go over TCP, so they'll be routed through Tor, by setting DNS_PUBLIC=tcp. You may also disable IGD (UPnP port forwarding negotiation), which is pointless with Tor. To allow local connections from the wallet, you might have to add TORSOCKS_ALLOW_INBOUND=1, some OSes need it and some don't. Example:
+
+`DNS_PUBLIC=tcp torsocks monerod --p2p-bind-ip 127.0.0.1 --no-igd`
+
+or:
+
+`DNS_PUBLIC=tcp TORSOCKS_ALLOW_INBOUND=1 torsocks monerod --p2p-bind-ip 127.0.0.1 --no-igd`
+
+TAILS ships with a very restrictive set of firewall rules. Therefore, you need to add a rule to allow this connection too, in addition to telling torsocks to allow inbound connections. Full example:
+
+`sudo iptables -I OUTPUT 2 -p tcp -d 127.0.0.1 -m tcp --dport 18081 -j ACCEPT`
+
+`DNS_PUBLIC=tcp torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --rpc-bind-ip 127.0.0.1 --data-dir /home/amnesia/Persistent/your/directory/to/the/blockchain`
+
+`./monero-wallet-cli`
+
+## Using readline
+
+While monerod and monero-wallet-cli do not use readline directly, most of the functionality can be obtained by running them via rlwrap. This allows command recall, edit capabilities, etc. It does not give autocompletion without an extra completion file, however. To use rlwrap, simply prepend `rlwrap` to the command line, eg:
+
+`rlwrap bin/monero-wallet-cli --wallet-file /path/to/wallet`
+
+Note: rlwrap will save things like your seed and private keys, if you supply them on prompt. You may want to not use rlwrap when you use simplewallet to restore from seed, etc.
+
+# Debugging
+
+This section contains general instructions for debugging failed installs or problems encountered with Monero. First ensure you are running the latest version built from the github repo.
+
+## Obtaining Stack Traces and Core Dumps on Unix Systems
+
+We generally use the tool `gdb` (GNU debugger) to provide stack trace functionality, and `ulimit` to provide core dumps in builds which crash or segfault.
+
+* To use gdb in order to obtain a stack trace for a build that has stalled:
+
+Run the build.
+
+Once it stalls, enter the following command:
+
+```
+gdb /path/to/monerod `pidof monerod` 
+```
+
+Type `thread apply all bt` within gdb in order to obtain the stack trace
+
+* If however the core dumps or segfaults:
+
+Enter `ulimit -c unlimited` on the command line to enable unlimited filesizes for core dumps
+
+Run the build.
+
+When it terminates with an output along the lines of "Segmentation fault (core dumped)", there should be a core dump file in the same directory as monerod.
+
+You can now analyse this core dump with `gdb` as follows:
+
+`gdb /path/to/monerod /path/to/dumpfile`
+
+Print the stack trace with `bt`
+
+* To run monero within gdb:
+
+Type `gdb /path/to/monerod`
+
+Pass command-line options with `--args` followed by the relevant arguments
+
+Type `run` to run monerod
+
+## Analysing Memory Corruption
+
+We use the tool `valgrind` for this.
+
+Run with `valgrind /path/to/monerod`. It will be slow.
+
+## LMDB
+
+Instructions for debugging suspected blockchain corruption as per @HYC
+
+There is an `mdb_stat` command in the LMDB source that can print statistics about the database but it's not routinely built. This can be built with the following command:
+
+`cd ~/monero/external/db_drivers/liblmdb && make`
+
+The output of `mdb_stat -ea <path to blockchain dir>` will indicate inconsistencies in the blocks, block_heights and block_info table.
+
+The output of `mdb_dump -s blocks <path to blockchain dir>` and `mdb_dump -s block_info <path to blockchain dir>` is useful for indicating whether blocks and block_info contain the same keys.
+
+These records are dumped as hex data, where the first line is the key and the second line is the data.
+
+
+| Windows | Linux | OS X
+| :---- | :------ | :---- |
+[![Windows build status][1]][2] | [![Linux build status][3]][4] | [![OS X build status][5]][6] | 
+
+[1]: https://ci.appveyor.com/api/projects/status/451tv98n7xvxm5ol/branch/master?svg=true
+[2]: https://ci.appveyor.com/project/stratis/stratisbitcoinfullnode
+[3]: https://travis-ci.org/stratisproject/StratisBitcoinFullNode.svg?branch=master
+[4]: https://travis-ci.org/stratisproject/StratisBitcoinFullNode
+[5]: https://travis-ci.org/stratisproject/StratisBitcoinFullNode.svg?branch=master
+[6]: https://travis-ci.org/stratisproject/StratisBitcoinFullNode
+
+
+Stratis Bitcoin
+===============
+
+https://stratisplatform.com
+
+Bitcoin Implementation in C#
+----------------------------
+
+Stratis is an implementation of the Bitcoin protocol in C# on the [.NET Core](https://dotnet.github.io/) platform.  
+The node can run on the Bitcoin and Stratis networks.  
+Stratis Bitcoin is based on the [NBitcoin](https://github.com/MetacoSA/NBitcoin) project.  
+
+For Proof of Stake support on the Stratis token the node is using [NStratis](https://github.com/stratisproject/NStratis) which is a POS implementation of NBitcoin.  
+
+[.NET Core](https://dotnet.github.io/) is an open source cross platform framework and enables the development of applications and services on Windows, macOS and Linux.  
+Join our community on [slack](https://stratisplatform.slack.com).  
+
+The design
+----------
+
+**A Modular Approach**
+
+A Blockchain is made of many components, from a FullNode that validates blocks to a Simple Wallet that track addresses.
+The end goal is to develop a set of [Nuget](https://en.wikipedia.org/wiki/NuGet) packages from which an implementer can cherry pick what he needs.
+
+* **NBitcoin**
+* **Stratis.Bitcoin.Core**  - The bare minimum to run a pruned node.
+* **Stratis.Bitcoin.Store** - Store and relay blocks to peers.
+* **Stratis.Bitcoin.MemoryPool** - Track pending transaction.
+* **Stratis.Bitcoin.Wallet** - Send and Receive coins
+* **Stratis.Bitcoin.Miner** - POS or POW
+* **Stratis.Bitcoin.Explorer**
+
+
+Create a Blockchain in a .NET Core style programming
+```
+  var node = new FullNodeBuilder()
+   .UseNodeSettings(nodeSettings)
+   .UseConsensus()
+   .UseBlockStore()
+   .UseMempool()
+   .AddMining()
+   .AddRPC()
+   .Build();
+
+  node.Run();
+```
+
+What's Next
+----------
+
+We plan to add many more features on top of the Stratis Bitcoin blockchain:
+Sidechains, Private/Permissioned blockchain, Compiled Smart Contracts, NTumbleBit/Breeze wallet and more...
+
+Running a FullNode
+------------------
+
+Our full node is currently in alpha.  
+
+```
+git clone https://github.com/stratisproject/StratisBitcoinFullNode.git  
+cd StratisBitcoinFullNode
+
+git submodule init
+git submodule update
+
+dotnet restore
+dotnet build
+
+```
+
+To run on the Bitcoin network: ``` Stratis.BitcoinD\dotnet run ```  
+To run on the Stratis network: ``` Stratis.StratisD\dotnet run ```  
+
+See more details [here](https://github.com/stratisproject/StratisBitcoinFullNode/blob/master/Documentation/getting-started.md)
+
+Development
+-----------
+Up for some blockchain development?
+
+Check this guides for more info:
+* [Contributing Guide](Documentation/contributing.md)
+* [Coding Style](Documentation/coding-style.md)
+* [Wiki Page](https://stratisplatform.atlassian.net/wiki/spaces/WIKI/overview)
+
+There is a lot to do and we welcome contributers developers and testers who want to get some Blockchain experience.
+You can find tasks at the issues/projects or visit our [C# dev](https://stratisplatform.slack.com/messages/csharp_development/) slack channel.
+
+Testing
+-------
+* [Testing Guidelines](Documentation/testing-guidelines.md)
+
+CI build
+-----------
+
+We use [AppVeyor](https://www.appveyor.com/) for our CI build and to create nuget packages.
+Every time someone pushes to the master branch or create a pull request on it, a build is triggered and new nuget packages are created.
+
+To skip a build, for example if you've made very minor changes, include the text **[skip ci]** or **[ci skip]** in your commits' comment (with the squared brackets).
+
+If you want get the :sparkles: latest :sparkles: (and unstable :bomb:) version of the nuget packages here: [Stratis.Bitcoin](https://ci.appveyor.com/api/projects/stratis/stratisbitcoinfullnode/artifacts/nuget/Stratis.Bitcoin.1.0.2-alpha.nupkg?job=Configuration%3A%20Release) and [Stratis.Bitcoin.Common](https://ci.appveyor.com/api/projects/stratis/stratisbitcoinfullnode/artifacts/nuget/Stratis.Bitcoin.Common.1.0.0.nupkg?job=Configuration%3A%20Release).
+
+# Eos
+
+Welcome to the EOS.IO source code repository!
+
+## Getting Started
+The following instructions overview the process of getting the software, building it, and running a simple test network that produces blocks.
+
+### Setting up a build/development environment
+This project is written primarily in C++14 and uses CMake as its build system. An up-to-date C++ toolchain (such as Clang or GCC) and the latest version of CMake is recommended. At the time of this writing, Nathan uses clang 4.0.0 and CMake 3.8.0.
+
+### Installing Dependencies
+Eos has the following external dependencies, which must be installed on your system:
+ - Boost 1.64
+ - OpenSSL
+ - LLVM 4.0
+ - [secp256k1-zkp (Cryptonomex branch)](https://github.com/cryptonomex/secp256k1-zkp.git)
+
+```
+git clone https://github.com/cryptonomex/secp256k1-zkp.git
+cd secp256k1-zkp
+./autogen.sh
+./configure
+make
+sudo make install
+```
+
+### Getting the code
+To download all of the code, download Eos and a recursion or two of submodules. The easiest way to get all of this is to do a recursive clone:
+
+`git clone https://github.com/eosio/eos --recursive`
+
+If a repo is cloned without the `--recursive` flag, the submodules can be retrieved after the fact by running this command from within the repo:
+
+`git submodule update --init --recursive`
+
+### Configuring and building
+To do an in-source build, simply run `cmake .` from the top level directory. Out-of-source builds are also supported. To override clang's default choice in compiler, add these flags to the CMake command:
+
+`-DCMAKE_CXX_COMPILER=/path/to/c++ -DCMAKE_C_COMPILER=/path/to/cc`
+
+For a debug build, add `-DCMAKE_BUILD_TYPE=Debug`. Other common build types include `Release` and `RelWithDebInfo`.
+
+After successfully running cmake, simply run `make` to build everything. To run the test suite after building, run the `chain_test` executable in the `tests` folder.
+
+### Creating and launching a single-node testnet
+After successfully building the project, the `eosd` binary should be present in the `programs/eosd` directory. Go ahead and run `eosd` -- it will probably exit with an error, but if not, close it immediately with Ctrl-C. Note that `eosd` will have created a directory named `data-dir` containing the default configuration (`config.ini`) and some other internals. This default data storage path can be overridden by passing `--data-dir /path/to/data` to `eosd`.
+
+Edit the `config.ini` file, adding the following settings to the defaults already in place:
+
+```
+# Load the testnet genesis state, which creates some initial block producers with the default key
+genesis-json = /path/to/eos/source/genesis.json
+# Enable production on a stale chain, since a single-node test chain is pretty much always stale
+enable-stale-production = true
+# Enable block production with the testnet producers
+producer-name = inita
+producer-name = initb
+producer-name = initc
+producer-name = initd
+producer-name = inite
+producer-name = initf
+producer-name = initg
+producer-name = inith
+producer-name = initi
+producer-name = initj
+producer-name = initk
+producer-name = initl
+producer-name = initm
+producer-name = initn
+producer-name = inito
+producer-name = initp
+producer-name = initq
+producer-name = initr
+producer-name = inits
+producer-name = initt
+producer-name = initu
+# Load the block producer plugin, so we can produce blocks
+plugin = eos::producer_plugin
+```
+
+Now it should be possible to run `eosd` and see it begin producing blocks. At present, the P2P code is not implemented, so only single-node configurations are possible. When the P2P networking is implemented, these instructions will be updated to show how to create an example multi-node testnet.
+
+### Run in docker
+
+So simple and fast operation EOS:
+ - [Docker](https://docs.docker.com)
+ - [Docker-compose](https://github.com/docker/compose)
+ - [Docker-volumes](https://github.com/cpuguy83/docker-volumes)
+
+Build eos images
+
+```
+cd eos/Docker
+cp ../genesis.json .
+docker build --rm -t eosio/eos .
+```
+
+Start docker
+
+```
+sudo rm -rf /data/store/eos # options 
+sudo mkdir -p /data/store/eos
+docker-compose -f docker-compose.yml up
+```
+
+Done
+
+
+
+
+### How to Build LLVM and clang for WASM
+
+By default LLVM and clang do not include the WASM build target, so you will have to build it yourself. Note that following these instructions will create a version of LLVM that can only build WASM targets.
+
+```
+mkdir  ~/wasm-compiler
+cd ~/wasm-compiler
+git clone --depth 1 --single-branch --branch release_40 https://github.com/llvm-mirror/llvm.git
+cd llvm/tools
+git clone --depth 1 --single-branch --branch release_40 https://github.com/llvm-mirror/clang.git
+cd ..
+mkdir build
+cd build
+cmake -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=.. -DLLVM_TARGETS_TO_BUILD= -DLLVM_EXPERIMENTAL_TARGETS_TO_BUILD=WebAssembly -DCMAKE_BUILD_TYPE=Release ../
+make -j4 install
+```
+
+### Using the WASM compiler to perform a full build of the project
+
+The WASM_LLVM_CONFIG environment variable is used to find our recently built WASM compiler.
+This is needed to compile the example contracts insde eos/contracts folder and their respective tests.
+
+```
+git clone https://github.com/eosio/eos --recursive
+mkdir -p eos/build && cd eos/build
+WASM_LLVM_CONFIG=~/wasm-compiler/llvm/bin/llvm-config cmake ..
+make -j4
+```
+
+BitShares Core
+==============
+* [Getting Started](#getting-started)
+* [Support](#support)
+* [Using the API](#using-the-api)
+* [Accessing restricted API's](#accessing-restricted-apis)
+* [FAQ](#faq)
+* [License](#license)
+
+BitShares Core is the BitShares blockchain implementation and command-line interface.
+The web wallet is [BitShares UI](https://github.com/bitshares/bitshares-ui).
+
+Visit [BitShares.org](https://bitshares.org/) to learn about BitShares and join the community at [BitSharesTalk.org](https://bitsharestalk.org/).
+
+**NOTE:** The official BitShares git repository location, default branch, and submodule remotes were recently changed. Existing
+repositories can be updated with the following steps:
+
+    git remote set-url origin https://github.com/bitshares/bitshares-core.git
+    git checkout master
+    git remote set-head origin --auto
+    git pull
+    git submodule sync --recursive
+    git submodule update --init --recursive
+
+Getting Started
+---------------
+Build instructions and additional documentation are available in the
+[wiki](https://github.com/bitshares/bitshares-core/wiki).
+
+We recommend building on Ubuntu 16.04 LTS, and the build dependencies may be installed with:
+
+    sudo apt-get update
+    sudo apt-get install autoconf cmake git libboost-all-dev libssl-dev
+
+To build after all dependencies are installed:
+
+    git clone https://github.com/bitshares/bitshares-core.git
+    cd bitshares-core
+    git checkout <LATEST_RELEASE_TAG>
+    git submodule update --init --recursive
+    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
+    make
+
+**NOTE:** BitShares requires an [OpenSSL](https://www.openssl.org/) version in the 1.0.x series. OpenSSL 1.1.0 and newer are NOT supported. If your system OpenSSL version is newer, then you will need to manually provide an older version of OpenSSL and specify it to CMake using `-DOPENSSL_INCLUDE_DIR`, `-DOPENSSL_SSL_LIBRARY`, and `-DOPENSSL_CRYPTO_LIBRARY`.
+
+**NOTE:** BitShares requires a [Boost](http://www.boost.org/) version in the range [1.57, 1.60]. Versions earlier than
+1.57 or newer than 1.60 are NOT supported. If your system Boost version is newer, then you will need to manually build
+an older version of Boost and specify it to CMake using `DBOOST_ROOT`.
+
+After building, the witness node can be launched with:
+
+    ./programs/witness_node/witness_node
+
+The node will automatically create a data directory including a config file. It may take several hours to fully synchronize
+the blockchain. After syncing, you can exit the node using Ctrl+C and setup the command-line wallet by editing
+`witness_node_data_dir/config.ini` as follows:
+
+    rpc-endpoint = 127.0.0.1:8090
+
+After starting the witness node again, in a separate terminal you can run:
+
+    ./programs/cli_wallet/cli_wallet
+
+Set your inital password:
+
+    >>> set_password <PASSWORD>
+    >>> unlock <PASSWORD>
+
+To import your initial balance:
+
+    >>> import_balance <ACCOUNT NAME> [<WIF_KEY>] true
+
+If you send private keys over this connection, `rpc-endpoint` should be bound to localhost for security.
+
+Use `help` to see all available wallet commands. Source definition and listing of all commands is available
+[here](https://github.com/bitshares/bitshares-core/blob/master/libraries/wallet/include/graphene/wallet/wallet.hpp).
+
+Support
+-------
+Technical support is available in the [BitSharesTalk technical support subforum](https://bitsharestalk.org/index.php?board=45.0).
+
+BitShares Core bugs can be reported directly to the [issue tracker](https://github.com/bitshares/bitshares-core/issues).
+
+BitShares UI bugs should be reported to the [UI issue tracker](https://github.com/bitshares/bitshares-ui/issues)
+
+Using the API
+-------------
+
+We provide several different API's.  Each API has its own ID.
+When running `witness_node`, initially two API's are available:
+API 0 provides read-only access to the database, while API 1 is
+used to login and gain access to additional, restricted API's.
+
+Here is an example using `wscat` package from `npm` for websockets:
+
+    $ npm install -g wscat
+    $ wscat -c ws://127.0.0.1:8090
+    > {"id":1, "method":"call", "params":[0,"get_accounts",[["1.2.0"]]]}
+    < {"id":1,"result":[{"id":"1.2.0","annotations":[],"membership_expiration_date":"1969-12-31T23:59:59","registrar":"1.2.0","referrer":"1.2.0","lifetime_referrer":"1.2.0","network_fee_percentage":2000,"lifetime_referrer_fee_percentage":8000,"referrer_rewards_percentage":0,"name":"committee-account","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[],"address_auths":[]},"active":{"weight_threshold":6,"account_auths":[["1.2.5",1],["1.2.6",1],["1.2.7",1],["1.2.8",1],["1.2.9",1],["1.2.10",1],["1.2.11",1],["1.2.12",1],["1.2.13",1],["1.2.14",1]],"key_auths":[],"address_auths":[]},"options":{"memo_key":"GPH1111111111111111111111111111111114T1Anm","voting_account":"1.2.0","num_witness":0,"num_committee":0,"votes":[],"extensions":[]},"statistics":"2.7.0","whitelisting_accounts":[],"blacklisting_accounts":[]}]}
+
+We can do the same thing using an HTTP client such as `curl` for API's which do not require login or other session state:
+
+    $ curl --data '{"jsonrpc": "2.0", "method": "call", "params": [0, "get_accounts", [["1.2.0"]]], "id": 1}' http://127.0.0.1:8090/rpc
+    {"id":1,"result":[{"id":"1.2.0","annotations":[],"membership_expiration_date":"1969-12-31T23:59:59","registrar":"1.2.0","referrer":"1.2.0","lifetime_referrer":"1.2.0","network_fee_percentage":2000,"lifetime_referrer_fee_percentage":8000,"referrer_rewards_percentage":0,"name":"committee-account","owner":{"weight_threshold":1,"account_auths":[],"key_auths":[],"address_auths":[]},"active":{"weight_threshold":6,"account_auths":[["1.2.5",1],["1.2.6",1],["1.2.7",1],["1.2.8",1],["1.2.9",1],["1.2.10",1],["1.2.11",1],["1.2.12",1],["1.2.13",1],["1.2.14",1]],"key_auths":[],"address_auths":[]},"options":{"memo_key":"GPH1111111111111111111111111111111114T1Anm","voting_account":"1.2.0","num_witness":0,"num_committee":0,"votes":[],"extensions":[]},"statistics":"2.7.0","whitelisting_accounts":[],"blacklisting_accounts":[]}]}
+
+API 0 is accessible using regular JSON-RPC:
+
+    $ curl --data '{"jsonrpc": "2.0", "method": "get_accounts", "params": [["1.2.0"]], "id": 1}' http://127.0.0.1:8090/rpc
+
+Accessing restricted API's
+--------------------------
+
+You can restrict API's to particular users by specifying an `apiaccess` file in `config.ini`.  Here is an example `apiaccess` file which allows
+user `bytemaster` with password `supersecret` to access four different API's, while allowing any other user to access the three public API's
+necessary to use the wallet:
+
+    {
+       "permission_map" :
+       [
+          [
+             "bytemaster",
+             {
+                "password_hash_b64" : "9e9GF7ooXVb9k4BoSfNIPTelXeGOZ5DrgOYMj94elaY=",
+                "password_salt_b64" : "INDdM6iCi/8=",
+                "allowed_apis" : ["database_api", "network_broadcast_api", "history_api", "network_node_api"]
+             }
+          ],
+          [
+             "*",
+             {
+                "password_hash_b64" : "*",
+                "password_salt_b64" : "*",
+                "allowed_apis" : ["database_api", "network_broadcast_api", "history_api"]
+             }
+          ]
+       ]
+    }
+
+Passwords are stored in `base64` as salted `sha256` hashes.  A simple Python script, `saltpass.py` is avaliable to obtain hash and salt values from a password.
+A single asterisk `"*"` may be specified as username or password hash to accept any value.
+
+With the above configuration, here is an example of how to call `add_node` from the `network_node` API:
+
+    {"id":1, "method":"call", "params":[1,"login",["bytemaster", "supersecret"]]}
+    {"id":2, "method":"call", "params":[1,"network_node",[]]}
+    {"id":3, "method":"call", "params":[2,"add_node",["127.0.0.1:9090"]]}
+
+Note, the call to `network_node` is necessary to obtain the correct API identifier for the network API.  It is not guaranteed that the network API identifier will always be `2`.
+
+Since the `network_node` API requires login, it is only accessible over the websocket RPC.  Our `doxygen` documentation contains the most up-to-date information
+about API's for the [witness node](https://bitshares.github.io/doxygen/namespacegraphene_1_1app.html) and the
+[wallet](https://bitshares.github.io/doxygen/classgraphene_1_1wallet_1_1wallet__api.html).
+If you want information which is not available from an API, it might be available
+from the [database](https://bitshares.github.io/doxygen/classgraphene_1_1chain_1_1database.html);
+it is fairly simple to write API methods to expose database methods.
+
+FAQ
+---
+
+- Is there a way to generate help with parameter names and method descriptions?
+
+    Yes. Documentation of the code base, including APIs, can be generated using Doxygen. Simply run `doxygen` in this directory.
+
+    If both Doxygen and perl are available in your build environment, the CLI wallet's `help` and `gethelp`
+    commands will display help generated from the doxygen documentation.
+
+    If your CLI wallet's `help` command displays descriptions without parameter names like
+        `signed_transaction transfer(string, string, string, string, string, bool)`
+    it means CMake was unable to find Doxygen or perl during configuration.  If found, the
+    output should look like this:
+        `signed_transaction transfer(string from, string to, string amount, string asset_symbol, string memo, bool broadcast)`
+
+- Is there a way to allow external program to drive `cli_wallet` via websocket, JSONRPC, or HTTP?
+
+    Yes. External programs may connect to the CLI wallet and make its calls over a websockets API. To do this, run the wallet in
+    server mode, i.e. `cli_wallet -s "127.0.0.1:9999"` and then have the external program connect to it over the specified port
+    (in this example, port 9999).
+
+- Is there a way to access methods which require login over HTTP?
+
+    No.  Login is inherently a stateful process (logging in changes what the server will do for certain requests, that's kind
+    of the point of having it).  If you need to track state across HTTP RPC calls, you must maintain a session across multiple
+    connections.  This is a famous source of security vulnerabilities for HTTP applications.  Additionally, HTTP is not really
+    designed for "server push" notifications, and we would have to figure out a way to queue notifications for a polling client.
+
+    Websockets solves all these problems.  If you need to access Graphene's stateful methods, you need to use Websockets.
+
+- What is the meaning of `a.b.c` numbers?
+
+    The first number specifies the *space*.  Space 1 is for protocol objects, 2 is for implementation objects.
+    Protocol space objects can appear on the wire, for example in the binary form of transactions.
+    Implementation space objects cannot appear on the wire and solely exist for implementation
+    purposes, such as optimization or internal bookkeeping.
+
+    The second number specifies the *type*.  The type of the object determines what fields it has.  For a
+    complete list of type ID's, see `enum object_type` and `enum impl_object_type` in
+    [types.hpp](https://github.com/bitshares/bitshares-2/blob/bitshares/libraries/chain/include/graphene/chain/protocol/types.hpp).
+
+    The third number specifies the *instance*.  The instance of the object is different for each individual
+    object.
+
+- The answer to the previous question was really confusing.  Can you make it clearer?
+
+    All account ID's are of the form `1.2.x`.  If you were the 9735th account to be registered,
+    your account's ID will be `1.2.9735`.  Account `0` is special (it's the "committee account,"
+    which is controlled by the committee members and has a few abilities and restrictions other accounts
+    do not).
+
+    All asset ID's are of the form `1.3.x`.  If you were the 29th asset to be registered,
+    your asset's ID will be `1.3.29`.  Asset `0` is special (it's BTS, which is considered the "core asset").
+
+    The first and second number together identify the kind of thing you're talking about (`1.2` for accounts,
+    `1.3` for assets).  The third number identifies the particular thing.
+
+- How do I get the `network_add_nodes` command to work?  Why is it so complicated?
+
+    You need to follow the instructions in the "Accessing restricted API's" section to
+    allow a username/password access to the `network_node` API.  Then you need
+    to pass the username/password to the `cli_wallet` on the command line or in a config file.
+
+    It's set up this way so that the default configuration is secure even if the RPC port is
+    publicly accessible.  It's fine if your `witness_node` allows the general public to query
+    the database or broadcast transactions (in fact, this is how the hosted web UI works).  It's
+    less fine if your `witness_node` allows the general public to control which p2p nodes it's
+    connecting to.  Therefore the API to add p2p connections needs to be set up with proper access
+    controls.
+ 
+License
+-------
+BitShares Core is under the MIT license. See [LICENSE](https://github.com/bitshares/bitshares-core/blob/master/LICENSE.txt)
+for more information.
+
+Zcash 1.0.10-1
+=============
+
+What is Zcash?
+--------------
+
+[Zcash](https://z.cash/) is an implementation of the "Zerocash" protocol.
+Based on Bitcoin's code, it intends to offer a far higher standard of privacy
+through a sophisticated zero-knowledge proving scheme that preserves
+confidentiality of transaction metadata. Technical details are available
+in our [Protocol Specification](https://github.com/zcash/zips/raw/master/protocol/protocol.pdf).
+
+This software is the Zcash client. It downloads and stores the entire history
+of Zcash transactions; depending on the speed of your computer and network
+connection, the synchronization process could take a day or more once the
+blockchain has reached a significant size.
+
+Security Warnings
+-----------------
+
+See important security warnings in
+[doc/security-warnings.md](doc/security-warnings.md).
+
+**Zcash is experimental and a work-in-progress.** Use at your own risk.
+
+Deprecation Policy
+------------------
+
+This release is considered deprecated 16 weeks after the release day. There
+is an automatic deprecation shutdown feature which will halt the node some
+time after this 16 week time period. The automatic feature is based on block
+height and can be explicitly disabled.
+
+Where do I begin?
+-----------------
+We have a guide for joining the main Zcash network:
+https://github.com/zcash/zcash/wiki/1.0-User-Guide
+
+### Need Help?
+
+* See the documentation at the [Zcash Wiki](https://github.com/zcash/zcash/wiki)
+  for help and more information.
+* Ask for help on the [Zcash](https://forum.z.cash/) forum.
+
+Participation in the Zcash project is subject to a
+[Code of Conduct](code_of_conduct.md).
+
+Building
+--------
+
+Build Zcash along with most dependencies from source by running
+./zcutil/build.sh. Currently only Linux is officially supported.
+
+License
+-------
+
+For license information see the file [COPYING](COPYING).
+
+# Introducing Steem (beta)
+
+Steem is an experimental Delegated Proof of Stake blockchain with an unproven consensus
+algorithm.
+
+  - Currency symbol STEEM
+  - 1.000 STEEM block reward at launch
+  - 10% APR inflation narrowing to 1% APR over 20 years.
+
+# Public Announcement & Discussion
+
+Steem was announced on the
+[Bitcointalk forum](https://bitcointalk.org/index.php?topic=1410943.new) prior to
+the start of any mining.
+
+# No Support & No Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+IN THE SOFTWARE.
+
+# Blockchain consensus rules
+
+Rather than attempt to describe the rules of the blockchain, it is up to
+each individual to inspect the code to understand the consensus rules.
+
+# Quickstart
+
+Just want to get up and running quickly?  Try deploying a prebuilt
+dockerized container.  Both common binary types are included.
+
+## Dockerized p2p Node
+
+To run a p2p node (ca. 2GB of memory is required at the moment):
+
+    docker run \
+        -d -p 2001:2001 -p 8090:8090 --name steemd-default \
+        steemit/steem
+
+    docker logs -f steemd-default  # follow along
+
+## Dockerized Full Node
+
+To run a node with *all* the data (e.g. for supporting a content website)
+that uses ca. 14GB of memory and growing:
+
+    docker run \
+        --env USE_WAY_TOO_MUCH_RAM=1 --env USE_FULL_WEB_NODE=1 \
+        -d -p 2001:2001 -p 8090:8090 --name steemd-full \
+        steemit/steem
+
+    docker logs -f steemd-full
+
+# Environment variables
+
+There are quite a few environment variables that can be set to run steemd in different ways:
+
+* `USE_WAY_TOO_MUCH_RAM` - if set to true, steemd starts a 'full node'
+* `USE_FULL_WEB_NODE` - if set to true, a default config file will be used that enables a full set of API's and associated plugins.
+* `USE_NGINX_FRONTEND` - if set to true, this will enable an NGINX reverse proxy in front of steemd that proxies websocket requests to steemd. This will also enable a custom healtcheck at the path '/health' that lists how many seconds away from current blockchain time your node is. It will return a '200' if it's less than 60 seconds away from synced.
+* `USE_MULTICORE_READONLY` - if set to true, this will enable steemd in multiple reader mode to take advantage of multiple cores (if available). Read requests are handled by the read-only nodes, and write requests are forwarded back to the single 'writer' node automatically. NGINX load balances all requests to the reader nodes, 4 per available core. This setting is still considered experimental and may have trouble with some API calls until further development is completed.
+* `HOME` - set this to the path where you want steemd to store it's data files (block log, shared memory, config file, etc). By default `/var/lib/steemd` is used and exists inside the docker container. If you want to use a different mountpoint (like a ramdisk, or a different drive) then you may want to set this variable to map the volume to your docker container.
+
+# PaaS mode
+
+Steemd now supports a PaaS mode (platform as a service) that currently works with Amazon's Elastic Beanstalk service. It can be launched using the following environment variables:
+
+* `USE_PAAS` - if set to true, steemd will launch in a format that works with AWS EB. Containers will exit upon failure so that they can be relaunched automatically by ECS. This mode assumes `USE_WAY_TOO_MUCH_RAM` and `USE_FULL_WEB_NODE`, they do not need to be also set.
+* `S3_BUCKET` - set this to the name of the S3 bucket where you will store shared memory files for steemd in Amazon S3. They will be stored compressed in bz2 format with the file name `blockchain-$VERSION-latest.tar.bz2`, where $VERSION is the release number followed by the git short commit hash stored in each docker image at `/etc/steemdversion`.
+* `SYNC_TO_S3` - if set to true, the node will function to only generate shared memory files and upload them to the specified S3 bucket. This makes fast deployments and autoscaling for steemd possible.
+
+# Seed Nodes
+
+A list of some seed nodes to get you started can be found in
+[doc/seednodes.txt](doc/seednodes.txt).
+
+This same file is baked into the docker images and can be overridden by
+setting `STEEMD_SEED_NODES` in the container environment at `docker run`
+time to a whitespace delimited list of seed nodes (with port).
+
+# Building
+
+See [doc/building.md](doc/building.md) for detailed build instructions, including
+compile-time options, and specific commands for Linux (Ubuntu LTS) or macOS X.
+
+# Testing
+
+See [doc/testing.md](doc/testing.md) for test build targets and info
+on how to use lcov to check code test coverage.
+
+# System Requirements
+
+For a full web node, you need at least 55GB of space available. Steemd uses a memory mapped file which currently holds 36GB of data and by default is set to use up to 40GB. The block log of the blockchain itself is a little over 10GB. It's highly recommended to run steemd on a fast disk such as an SSD or by placing the shared memory files in a ramdisk and using the `--shard-file-dir=/path` command line option to specify where. At least 16GB of memory is required for a full web node. Seed nodes (p2p mode) can run with as little as 4GB of memory. Any CPU with decent single core performance should be sufficient.
+
+On Linux use the following Virtual Memory configuration for the initial sync and subsequent replays. It is not needed for normal operation.
+
+```
+echo    75 | sudo tee /proc/sys/vm/dirty_background_ratio
+echo  1000 | sudo tee /proc/sys/vm/dirty_expire_centisec
+echo    80 | sudo tee /proc/sys/vm/dirty_ratio
+echo 30000 | sudo tee /proc/sys/vm/dirty_writeback_centisec
+```
+
+# Waves [![Build Status](https://travis-ci.org/wavesplatform/Waves.svg?branch=master)](https://travis-ci.org/wavesplatform/Waves) [![](https://images.microbadger.com/badges/version/wavesplatform/waves-testnet.svg)](http://microbadger.com/images/wavesplatform/waves-testnet "Testnet Node Docker image")
+
+In the master branch there is a code with functions that is under development. The latest release for each network can be found in the [Releases section](https://github.com/wavesplatform/Waves/releases), you can switch to the corresponding tag and build the application.
+
+[How to configure Waves node](https://github.com/wavesplatform/Waves/wiki/How-to-install-Waves-node)
+
+# Installation
+
+Please read [repo wiki article](https://github.com/wavesplatform/Waves/wiki/How-to-install-Waves-node).
+
+## Compiling Packages from source
+
+It is only possible to create deb and fat jar packages.
+
+### Install SBT (Scala Build Tool)
+
+For Ubuntu/Debian:
+
+```
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
+```
+
+You can install sbt on Mac OS X using Homebrew.
+
+### Create Package
+
+Clone this repo and execute
+
+```
+sbt packageAll
+```
+
+.deb and .jar packages will be in /package folder. To build testnet packages use
+
+```
+sbt packageAll -Dnetwork=testnet
+```
+
+# Running Tests
+
+`sbt test`
+
+# Running Integration Tests
+
+## TL;DR
+
+ * Make sure you have [Docker](https://www.docker.com/get-docker) and SBT. 
+ * `sbt it:test`
+ 
+## Customizing Tests
+
+By default, `it:test` will do the following: 
+* Build a container image with the fat jar and a [template.conf](src/it/resources/template.conf). The newly-built image
+  will be registered with the local Docker daemon. This image is built with [sbt-docker](https://github.com/marcuslonnberg/sbt-docker)
+  plugin. 
+* Run the test suites from `src/it/scala`, passing docker image ID via `docker.imageId` system property.
+
+### Debugging
+
+Integration tests run in a forked JVM. To debug test suite code launched by SBT, you will need to add remote debug 
+options to `javaOptions` in `IntegrationTest` configuration:
+
+```scala
+javaOptions in IntegrationTest += "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005"
+```
+
+Debugging a node inside a container is a little more complicated: you will need to modify the `WAVES_OPTS` environment
+variable before starting a container.
+
+### Running Tests from IDE
+
+You can run integration test suites from your preferred IDE. The only requirement is to have Docker image pre-built and
+have `docker.imageId` system property defined for the run configuration. The easiest way to build an image is to issue
+`sbt docker` command. You'll find the image ID in the SBT output:
+
+```
+...
+[info] Step 5/5 : ENTRYPOINT /opt/waves/start-waves.sh
+[info]  ---> Using cache
+[info]  ---> e243fa08d496
+[info] Successfully built e243fa08d496
+[info] Tagging image e243fa08d496 with name: com.wavesplatform/root
+[success] Total time: 4 s, completed Mar 22, 2017 12:36:34 PM
+```
+
+In this example, `e243fa08d496` is the image ID you need. Make sure to re-build the image whenever the node code (not 
+the tests) is changed. If you run the tests from SBT, there's no need to manually rebuild the image, SBT will handle
+this automatically.
+
+# [![Sia Logo](http://sia.tech/img/svg/sia-green-logo.svg)](http://sia.tech) v1.3.0 (Capricorn)
+
+[![Build Status](https://travis-ci.org/NebulousLabs/Sia.svg?branch=master)](https://travis-ci.org/NebulousLabs/Sia)
+[![GoDoc](https://godoc.org/github.com/NebulousLabs/Sia?status.svg)](https://godoc.org/github.com/NebulousLabs/Sia)
+[![Go Report Card](https://goreportcard.com/badge/github.com/NebulousLabs/Sia)](https://goreportcard.com/report/github.com/NebulousLabs/Sia)
+
+Sia is a new decentralized cloud storage platform that radically alters the
+landscape of cloud storage. By leveraging smart contracts, client-side
+encryption, and sophisticated redundancy (via Reed-Solomon codes), Sia allows
+users to safely store their data with hosts that they do not know or trust.
+The result is a cloud storage marketplace where hosts compete to offer the
+best service at the lowest price. And since there is no barrier to entry for
+hosts, anyone with spare storage capacity can join the network and start
+making money.
+
+![UI](http://i.imgur.com/iHoGqoL.png)
+
+Traditional cloud storage has a number of shortcomings. Users are limited to a
+few big-name offerings: Google, Microsoft, Amazon. These companies have little
+incentive to encrypt your data or make it easy to switch services later. Their
+code is closed-source, and they can lock you out of your account at any time.
+
+We believe that users should own their data. Sia achieves this by replacing
+the traditional monolithic cloud storage provider with a blockchain and a
+swarm of hosts, each of which stores an encrypted fragment of your data. Since
+the fragments are redundant, no single host can hold your data hostage: if
+they jack up their price or go offline, you can simply download from a
+different host. In other words, trust is removed from the equation, and
+switching to a different host is painless. Stripped of these unfair
+advantages, hosts must compete solely on the quality and price of the storage
+they provide.
+
+Sia can serve as a replacement for personal backups, bulk archiving, content
+distribution, and more. For developers, Sia is a low-cost alternative to
+Amazon S3. Storage on Sia is a full order of magnitude cheaper than on S3,
+with comparable bandwidth, latency, and durability. Sia works best for static
+content, especially media like videos, music, and photos.
+
+Distributing data across many hosts automatically confers several advantages.
+The most obvious is that, just like BitTorrent, uploads and downloads are
+highly parallel. Given enough hosts, Sia can saturate your bandwidth. Another
+advantage is that your data is spread across a wide geographic area, reducing
+latency and safeguarding your data against a range of attacks.
+
+It is important to note that users have full control over which hosts they
+use. You can tailor your host set for minimum latency, lowest price, widest
+geographic coverage, or even a strict whitelist of IP addresses or public
+keys.
+
+At the core of Sia is a blockchain that closely resembles Bitcoin.
+Transactions are conducted in Siacoin, a cryptocurrency. The blockchain is
+what allows Sia to enforce its smart contracts without relying on centralized
+authority. To acquire siacoins, use an exchange such as [Poloniex](https://poloniex.com), [Yunbi](https://yunbi.com), or
+[Bitsquare](https://bitsquare.io).
+
+To get started with Sia, check out the guides below:
+
+- [How to Store Data on Sia](https://blog.sia.tech/getting-started-with-private-decentralized-cloud-storage-c9565dc8c854)
+- [How to Become a Sia Host](https://blog.sia.tech/how-to-run-a-host-on-sia-2159ebc4725)
+- [Using the Sia API](https://blog.sia.tech/api-quickstart-guide-f1d160c05235)
+
+
+Usage
+-----
+
+Sia is ready for use with small sums of money and non-critical files, but
+until the network has a more proven track record, we advise against using it
+as a sole means of storing important data.
+
+This release comes with 2 binaries, siad and siac. siad is a background
+service, or "daemon," that runs the Sia protocol and exposes an HTTP API on
+port 9980. siac is a command-line client that can be used to interact with
+siad in a user-friendly way. There is also a graphical client, [Sia-UI](https://github.com/NebulousLabs/Sia-UI), which
+is the preferred way of using Sia for most users. For interested developers,
+the siad API is documented [here](doc/API.md).
+
+siad and siac are run via command prompt. On Windows, you can just double-
+click siad.exe if you don't need to specify any command-line arguments.
+Otherwise, navigate to its containing folder and click File->Open command
+prompt. Then, start the siad service by entering `siad` and pressing Enter.
+The command prompt may appear to freeze; this means siad is waiting for
+requests. Windows users may see a warning from the Windows Firewall; be sure
+to check both boxes ("Private networks" and "Public networks") and click
+"Allow access." You can now run `siac` (in a separate command prompt) or Sia-
+UI to interact with siad. From here, you can send money, upload and download
+files, and advertise yourself as a host.
+
+Building From Source
+--------------------
+
+To build from source, [Go 1.8 must be installed](https://golang.org/doc/install)
+on the system. Then simply use `go get`:
+
+```
+go get -u github.com/NebulousLabs/Sia/...
+```
+
+This will download the Sia repo to your `$GOPATH/src` folder, and install the
+`siad` and `siac` binaries in your `$GOPATH/bin` folder.
+
+To stay up-to-date, run the previous `go get` command again. Alternatively, you
+can use the Makefile provided in this repo. Run `git pull origin master` to
+pull the latest changes, and `make release-std` to build the new binaries. You
+can also run `make test` and `make test-long` to run the short and full test
+suites, respectively. Finally, `make cover` will generate code coverage reports
+for each package; they are stored in the `cover` folder and can be viewed in
+your browser.
+
+Bytecoin integration/staging tree
+================================
+
+Copyright (c) 2009-2012 Bytecoin Developers
+
+What is Bytecoin?
+----------------
+
+Bytecoin is an experimental new digital currency that enables instant payments to
+anyone, anywhere in the world. Bytecoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Bytecoin is also the name of the open source
+software which enables the use of this currency.
+
+Running The Client
+---------------------
+To run the client compile from source or fetch the clients from the original thread.
+To join the network the bytecoin.conf file must be placed in the appdata/bytecoin directory 
+
+License
+-------
+
+Bytecoin is released under the terms of the MIT license. See `COPYING` for more
+information or see http://opensource.org/licenses/MIT.
+
+Development process
+-------------------
+
+Developers work in their own trees, then submit pull requests when they think
+their feature or bug fix is ready.
+
+If it is a simple/trivial/non-controversial change, then one of the Bytecoin
+development team members simply pulls it.
+
+If it is a *more complicated or potentially controversial* change, then the patch
+submitter will be asked to start a discussion (if they haven't already) on the
+[mailing list](http://sourceforge.net/mailarchive/forum.php?forum_name=bytecoin-development).
+
+The patch will be accepted if there is broad consensus that it is a good thing.
+Developers should expect to rework and resubmit patches if the code doesn't
+match the project's coding conventions (see `doc/coding.txt`) or are
+controversial.
+
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/bytecoin/bytecoin/tags) are created
+regularly to indicate new official, stable release versions of Bytecoin.
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test. Please be patient and help out, and
+remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write unit tests for new code, and to
+submit new unit tests for old code.
+
+Unit tests for the core code are in `src/test/`. To compile and run them:
+
+    cd src; make -f makefile.linux test
+
+Unit tests for the GUI code are in `src/qt/test/`. To compile and run them:
+
+    qmake BYTECOIN_QT_TEST=1 -o Makefile.test bytecoin-qt.pro
+    make -f Makefile.test
+    ./Bytecoin-Qt
+
+Every pull request is built for both Windows and Linux on a dedicated server,
+and unit and sanity tests are automatically run. The binaries produced may be
+used for manual QA testing -- a link to them will appear in a comment on the
+pull request posted by 'BytecoinPullTester'. See `https://github.com/TheBlueMatt/test-scripts`
+for the build/test scripts.
+
+### Manual Quality Assurance (QA) Testing
+
+Large changes should have a test plan, and should be tested by somebody other
+than the developer who wrote the code.
+
+See `https://github.com/bytecoin/QA/` for how to create a test plan.
+
+# Lisk
+
+Lisk is a next generation crypto-currency and decentralized application platform, written entirely in JavaScript. For more information please refer to our website: https://lisk.io/.
+
+[![Build Status](https://jenkins.lisk.io/buildStatus/icon?job=Lisk-Pipeline/development)](https://jenkins.lisk.io/job/Lisk-Pipeline/development)
+[![Coverage Status](https://coveralls.io/repos/github/LiskHQ/lisk/badge.svg?branch=development)](https://coveralls.io/github/LiskHQ/lisk?branch=development)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![Join the chat at https://gitter.im/LiskHQ/lisk](https://badges.gitter.im/LiskHQ/lisk.svg)](https://gitter.im/LiskHQ/lisk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+**NOTE:** The following information is applicable to: **Ubuntu 14.04, 16.04 (LTS) or 16.10 - x86_64**.
+
+## Prerequisites - In order
+
+- Tool chain components -- Used for compiling dependencies
+
+  `sudo apt-get install -y python build-essential curl automake autoconf libtool`
+
+- Git (<https://github.com/git/git>) -- Used for cloning and updating Lisk
+
+  `sudo apt-get install -y git`
+
+- Node.js (<https://nodejs.org/>) -- Node.js serves as the underlying engine for code execution.
+
+  System wide via package manager:
+
+  ```
+  curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  ```
+
+  Locally using [nvm](https://github.com/creationix/nvm):
+
+  ```
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+  nvm install v6.10.1
+  ```
+
+- Install PostgreSQL (version 9.6.2):
+
+  ```
+  curl -sL "https://downloads.lisk.io/scripts/setup_postgresql.Linux" | bash -
+  sudo -u postgres createuser --createdb $USER
+  createdb lisk_test
+  createdb lisk_main
+  sudo -u postgres psql -d lisk_test -c "alter user "$USER" with password 'password';"
+  sudo -u postgres psql -d lisk_main -c "alter user "$USER" with password 'password';"
+  ```
+
+- Bower (<http://bower.io/>) -- Bower helps to install required JavaScript dependencies.
+
+  `npm install -g bower`
+
+- Grunt.js (<http://gruntjs.com/>) -- Grunt is used to compile the frontend code and serves other functions.
+
+  `npm install -g grunt-cli`
+
+- PM2 (<https://github.com/Unitech/pm2>) -- PM2 manages the node process for Lisk (Optional)
+
+  `npm install -g pm2`
+
+## Installation Steps
+
+Clone the Lisk repository using Git and initialize the modules.
+
+```
+git clone https://github.com/LiskHQ/lisk.git
+cd lisk
+npm install
+```
+
+## Managing Lisk
+
+To test that Lisk is built and configured correctly, run the following command:
+
+`node app.js`
+
+In a browser navigate to: <http://localhost:8000> (for the mainnet) or <http://localhost:7000> (for the testnet). If Lisk is running on a remote system, switch `localhost` for the external IP Address of the machine.
+
+Once the process is verified as running correctly, `CTRL+C` and start the process with `pm2`. This will fork the process into the background and automatically recover the process if it fails.
+
+`pm2 start --name lisk app.js`
+
+After the process is started, its runtime status and log location can be retrieved by issuing the following command:
+
+`pm2 show lisk`
+
+To stop Lisk after it has been started with `pm2`, issue the following command:
+
+`pm2 stop lisk`
+
+**NOTE:** The **port**, **address** and **config-path** can be overridden by providing the relevant command switch:
+
+```
+pm2 start --name lisk app.js -- -p [port] -a [address] -c [config-path]
+```
+
+## Tests
+
+Before running any tests, please ensure Lisk is configured to run on the same testnet that is used by the test-suite.
+
+Replace **config.json** and **genesisBlock.json** with the corresponding files under the **test** directory:
+
+```
+cp test/config.json test/genesisBlock.json .
+```
+
+**NOTE:** If the node was started with a different genesis block previous, trauncate the database before running tests.
+
+```
+dropdb lisk_test
+createdb lisk_test
+```
+
+**NOTE:** The master passphrase for this genesis block is as follows:
+
+```
+wagon stock borrow episode laundry kitten salute link globe zero feed marble
+```
+
+Launch Lisk (runs on port 4000):
+
+```
+node app.js
+```
+
+Run the test suite:
+
+```
+npm test
+```
+
+Run individual tests:
+
+```
+npm test -- test/lib/accounts.js
+npm test -- test/lib/transactions.js
+```
+
+## Authors
+
+- Boris Povod <boris@crypti.me>
+- Pavel Nekrasov <landgraf.paul@gmail.com>
+- Sebastian Stupurac <stupurac.sebastian@gmail.com>
+- Oliver Beddows <oliver@lightcurve.io>
+- Isabella Dell <isabella@lightcurve.io>
+- Marius Serek <mariusz@serek.net>
+- Maciej Baj <maciej@lightcurve.io>
+
+## License
+
+Copyright © 2016-2017 Lisk Foundation
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the [GNU General Public License](https://github.com/LiskHQ/lisk/tree/master/LICENSE) along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+***
+
+This program also incorporates work previously released with lisk `0.7.0` (and earlier) versions under the [MIT License](https://opensource.org/licenses/MIT). To comply with the requirements of that license, the following permission notice, applicable to those parts of the code only, is included below:
+
+Copyright © 2016-2017 Lisk Foundation  
+Copyright © 2015 Crypti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+# DEPRECATED!
+
+Please use (https://github.com/gnosis/gnosis-contracts/)
+
+
+Gnosis Smart Contracts
+===================
+
+<img src="assets/logo.png" />
+
+[![Slack Status](http://slack.gnosis.pm/badge.svg)](http://slack.gnosis.pm)
+
+Collection of smart contracts for the Gnosis prediction market platform (https://www.gnosis.pm). To interact with those contracts have a look at (https://github.com/gnosis/gnosis.js/).
+
+Install
+-------------
+```
+git clone https://github.com/ConsenSys/gnosis-contracts.git
+cd gnosis-contracts
+pip install -r requirements.txt
+```
+
+Test
+-------------
+### Run all tests:
+```
+cd gnosis-contracts
+python -m unittest discover contracts.tests
+```
+
+### Run one test:
+```
+cd gnosis-contracts
+python -m unittest contracts.tests.test_name
+```
+
+### Install virtual machine environment via vagrant
+```
+cd gnosis-contracts
+vagrant up
+```
+
+Deploy
+-------------
+### Deploy all contracts required for the basic framework:
+```
+cd gnosis-contracts/contracts/
+python ethdeploy.py --f deploy/basicFramework.json --optimize
+```
+
+Security and Liability
+-------------
+All contracts are WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+License
+-------------
+All smart contracts are released under GPL v.3.
+
+Contributors
+-------------
+- Stefan George ([Georgi87](https://github.com/Georgi87))
+- Martin Koeppelmann ([koeppelmann](https://github.com/koeppelmann))
+- Alan Lu ([cag](https://github.com/cag))
+
+# Golem
+
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/ieb6fm74e0f74qm1?svg=true)](https://ci.appveyor.com/project/golemfactory/golem)
+[![CircleCI](https://circleci.com/gh/golemfactory/golem.svg?style=shield)](https://circleci.com/gh/golemfactory/golem)
+[![Codecov](https://codecov.io/gh/golemfactory/golem/badge.svg)](https://codecov.io/gh/golemfactory/golem)
+
+The aim of the Golem project is to create a global prosumer market for computing power, in which
+producers may sell spare CPU time of their personal computers and consumers may acquire resources
+for computation-intensive tasks. In technical terms, Golem is designed as a decentralised peer-to-peer
+network established by nodes running the Golem client software. For the purpose of this paper we assume
+that there are two types of nodes in the Golem network: requestor nodes that announce computing
+tasks and compute nodes that perform computations (in the actual implementation nodes may switch
+between both roles).
+
+## Job offers
+
+- [C++ & Solidity Software Engineer](docs/jobs/cpp_and_solidity_software_engineer.md)
+
+## Installing and testing
+
+For Mac OS X (ver. 10.10 (Yosemite) or later) follow the installation instruction from [here](https://github.com/golemfactory/homebrew-golem).
+For Linux download [script](https://raw.githubusercontent.com/golemfactory/golem/develop/Installer/Installer_Linux/install.sh), make it executable `chmod +x install.sh` and run `./install.sh`.
+For MS Windows download the installer from [here](https://github.com/golemfactory/golem/releases/); when downloaded, just run `setup.exe`.
+
+Then read the application description and [testing](https://github.com/golemfactory/golem/wiki/Testing) instruction.
+
+[Golem for macOS](https://github.com/golemfactory/homebrew-golem)
+
+[Golem Linux script](https://raw.githubusercontent.com/golemfactory/golem/develop/Installer/Installer_Linux/install.sh)
+
+[Golem MS Windows installer](https://github.com/golemfactory/golem/releases/)
+
+All released packages are located [here](https://github.com/golemfactory/golem/releases), however, we strongly encourage you to use prepared installers.
+
+## Warning
+
+Golem Project is a work in progress. Current version is an alpha stage of Brass Golem and it's not fully secured. Check [this list of issues](https://github.com/golemfactory/golem/labels/security) for more details.
+Please be sure that you understand the risk before installing the software.
+
+## License
+
+Golem is open source and distributed under [GPLv3 license](https://www.gnu.org/licenses/gpl-3.0.html).
+
+## Acknowledgements
+
+Golem communicates with external technologies some of them may be downloaded and install with Golem package:
+* [Docker](https://www.docker.com/)
+* [FreeImage](http://freeimage.sourceforge.net/)
+* [Geth](https://github.com/ethereum/go-ethereum/wiki/geth)
+* [IPFS](https://ipfs.io/)
+* [OpenExr](http://www.openexr.com/)
+* [OpenSSL](https://www.openssl.org/)
+* [Python2.7](https://www.python.org/)
+* [PyQt5](https://www.riverbankcomputing.com/software/pyqt/intro)
+* [Qt5](https://www.qt.io/)
+* [SQLite3](https://sqlite.org/index.html)
+
+Benchmarks:
+* General: [Minilight](http://www.hxa.name/minilight) by Harrison Ainsworth / HXA7241 and Juraj Sukop
+* Blender: [scene-BMW](https://www.blender.org/download/demo-files/)
+* LuxRender: [SchoolCorridor](http://www.luxrender.net/wiki/Show-off_pack) by Simon Wendsche
+
+Icons:
+* [Freeline](https://www.iconfinder.com/iconsets/freeline) by Enes Dal.
+
+## Contact  
+
+Help us develop the application by submitting issues and bugs. See instruction
+[here](https://github.com/golemfactory/golem/wiki/Testing).
+
+You can also send us an email to `contact@golem.network` or talk to us on slack `golemproject.slack.com`.
+Get an invitation [here](http://golemproject.org:3000).
+
+[![Build Status](https://travis-ci.org/stellar/stellar-core.svg?branch=auto)](https://travis-ci.org/stellar/stellar-core)
+
+
+# stellar-core
+
+Stellar-core is a replicated state machine that maintains a local copy of a cryptographic ledger and processes transactions against it, in consensus with a set of peers.
+It implements the [Stellar Consensus Protocol](https://github.com/stellar/stellar-core/blob/master/src/scp/readme.md), a _federated_ consensus protocol.
+It is written in C++11 and runs on Linux, OSX and Windows.
+Learn more by reading the [overview document](https://github.com/stellar/stellar-core/blob/master/docs/readme.md).
+
+# Documentation
+
+Documentation of the code's layout and abstractions, as well as for the
+functionality available, can be found in
+[`./docs`](https://github.com/stellar/stellar-core/tree/master/docs).
+
+# Installation
+
+See [Installation](./INSTALL.md)
+
+# Contributing
+
+See [Contributing](./CONTRIBUTING.md)
+
+# Reporting issues
+
+Software has bugs, or maybe you have an idea for a change in stellar-core.
+
+Checklist
+ 1. do a search of issues in case there is one already tracking the one you ran into.
+ 2. search open issues (not addressed yet) using the filter `is:open` (default). If you have new information, include it into the issue.
+ 3. search closed issues by removing the `is:open` filter. Two possibilities here:
+     * the issue was resolved in a newer version - then you just need to install the version with the fix
+     * the issue was closed for some reason. You may decide to reopen it depending on context. Make sure to explain why the issue should be re-opened.
+
+For bugs being opened/re-opened, simply paste and fill the [Bug-Template.md](./Bug-Template.md) into the issue.
+
+# Running tests
+
+run tests with:
+  `src/stellar-core --test`
+
+run one test with:
+  `src/stellar-core --test  testName`
+
+run one test category with:
+  `src/stellar-core --test '[categoryName]'`
+
+Categories (or tags) can be combined: AND-ed (by juxtaposition) or OR-ed (by comma-listing).
+
+Tests tagged as [.] or [hide] are not part of the default test test.
+
+supported test options can be seen with
+  `src/stellar-core --test --help`
+
+display tests timing information:
+  `src/stellar-core --test -d yes '[categoryName]'`
+
+xml test output (includes nested section information):
+  `src/stellar-core --test -r xml '[categoryName]'`
+
+# Running tests against postgreSQL
+
+There are two options.  The easiest is to have the test suite just
+create a temporary postgreSQL database cluster in /tmp and delete it
+after the test.  That will happen by default if you run `make check`.
+
+You can also create a temporary database cluster manually, by running
+`./src/test/selftest-pg bash` to get a shell, then running tests
+manually.  The advantage of this is that you can examine the database
+log in `$PGDATA/pg_log/` after running tests, as well as manually
+inspect the database with `psql`.
+
+Finally, you can use an existing database cluster so long as it has
+databases named `test0`, `test1`, ..., `test9`, and `test`.  Do set
+this up, make sure your `PGHOST` and `PGUSER` environment variables
+are appropriately set, then run the following from bash:
+
+    for i in $(seq 0 9) ''; do
+        psql -c "create database test$i;"
+    done
+
+# Running stress tests
+We adopt the convention of tagging a stress-test for subsystem foo as [foo-stress][stress][hide].
+
+Then, running
+* `stellar-core --test [stress]` will run all the stress tests,
+* `stellar-core --test [foo-stress]` will run the stress tests for subsystem foo alone, and
+* neither `stellar-core --test` nor `stellar-core --test [foo]` will run stress tests.
+
+# Augur | Reference Client
+[![Build Status](https://travis-ci.org/AugurProject/augur.svg?branch=master)](https://travis-ci.org/AugurProject/augur)
+[![Coverage Status](https://coveralls.io/repos/github/AugurProject/augur/badge.svg?branch=master)](https://coveralls.io/github/AugurProject/augur?branch=master)
+
+Augur is a decentralized prediction market platform built on Ethereum.  
+It runs locally in your browser and communicates directly with the ethereum network, without going through intermediate servers.
+
+There are several ways to run it:
+
+* Easiest: **visit [app.augur.net](http://app.augur.net)**  
+* Balanced: **one-click azure install (coming soon)**
+* Best: [run ethereum locally](#eth_local)
+
+## Requirements
+[Git](https://git-scm.com/)  
+[Node](https://nodejs.org/) or [Docker](https://www.docker.com/)
+
+*A Note to Windows 10 Users:*  
+Turn on `Developer Mode` and also enable `Windows Subsystem For Linux` so that you have access to bash.  
+Run all subsequent commands within the bash command prompt.  
+It's also recommend that you use a Debian based workflow for the installation of packages (makes things much easier).
+
+## Build From Source
+
+```
+git clone https://github.com/AugurProject/augur.git
+cd augur
+```
+
+### NPM
+```
+npm install
+npm run link
+npm run build
+```
+
+### [Yarn](https://yarnpkg.com/)
+```
+yarn
+yarn build
+```
+
+### [Docker](https://www.docker.com/)
+```
+docker build -t augur .
+```
+
+This will create a `build` folder inside of the `augur` directory with all the files necessary to run the client.
+Simply copy these files to your web server of choice.
+
+## Develop
+
+### NPM
+```
+npm run dev
+```
+
+### [Yarn](https://yarnpkg.com/)
+```
+yarn dev
+```
+
+### [Docker](https://www.docker.com/)
+```
+docker run -p 8080:8080 augur
+```
+
+Visit [http://localhost:8080](http://localhost:8080)
+
+## Run Ethereum Locally <a name="eth_local"></a>
+
+There are a number of ways to go about running an Ethereum local node against Augur, described below is the CLI method using [geth](https://github.com/ethereum/go-ethereum/wiki/geth).
+
+Start off by [installing geth](https://github.com/ethereum/go-ethereum/wiki/Building-Ethereum).
+
+Depending on how you'll be running Augur (Development OR Production), follow the corresponding steps below:
+
+*NOTE --* Unless you have a specific reason for doing so, generally you should not simultaneously run geth and another Ethereum client (such as Mist or Parity).
+
+### Development -- Testnet (Ropsten)
+
+Create an Ethereum account (if needed):
+```
+geth --testnet account new
+```
+Be sure to securely store your password and remember the account address (displayed after account creation).
+
+Start geth:  
+```
+geth --testnet --unlock 0 --rpc --ws --rpcapi eth,net,shh,admin,txpool,web3,personal --wsapi eth,net,shh,web3,admin,txpool,personal --rpccorsdomain '*' --wsorigins '*' --cache 2048 console
+```
+
+Additional points of note:  
+* The value supplied to `--unlock` should correspond to the account you'd like to be using for Augur transactions.  
+  * To get a list of accounts and their numerical value run `geth account list`.
+
+### Production -- Main Network
+
+Important note: the Augur contracts have **not** yet been uploaded to the live Ethereum network, and therefore Augur is not yet available on the mainnet.  The following instructions are here as a placeholder for when our contracts are uploaded to the mainnet.
+
+Create an Ethereum account (if needed):
+```
+geth account new
+```
+Be sure to securely store your password and remember the account address (displayed after account creation).
+
+Start geth:  
+**Important** -- The following command will be using **real Eth (Main Network)** and is potentially more permissive than necessary for your use case.  
+**DO** educate yourself surrounding the arguments and determine which are appropriate for your specific use case.
+```
+geth --unlock 0 --rpc --ws --rpcapi eth,net,shh,admin,txpool,web3,personal --wsapi eth,net,shh,web3,admin,txpool,personal --rpccorsdomain '<domain of server>' --wsorigins '<domain of server>' --cache 2048 console
+```
+
+Additional resources:  
+[JSON RPC API Documentation](https://github.com/ethereum/wiki/wiki/JSON-RPC)  
+[Javascript Console](https://github.com/ethereum/go-ethereum/wiki/JavaScript-Console#web3)  
+
+Additional points of note:
+* The value supplied to `--unlock` should correspond to the account you'd like to be using for Augur transactions.  
+  * To get a list of accounts and their numerical value run `geth account list`.
+* The values supplied to `--rpccorsdomain` and `--wsorigins` should correspond to the server's domain which is running the instance of Augur.  **BE SPECIFIC + DO NOT USE A WILDCARD**
+
+## Documentation
+
+[http://docs.augur.net](http://docs.augur.net)
+
+## Development Tips
+
+**#1: Search the project filenames for whatever you are looking for before thinking about it too much.**
+
+Since our code is structured in many small files that are named the same as the state/functionality they represent, rather than try to follow and reverse engineer code paths, just blindly search all filenames for whatever it is you are looking for. More often than not, you will find what you need.
+
+Want to know where the css for pagination is? Don't bother tracing where/how they're included, just search your files for `pag` >>>and `pagination.less` will pop up.
+
+Want to see how the login account gets updated? Search the files for `login` >>> and `update-login-account.js` will appear.
+
+# Byteball core
+
+This is a library used in [Byteball](https://byteball.org) clients.  Never used directly.  Some of the clients that require the library:
+
+* [Byteball](../../../byteball) - GUI wallet for Mac, Windows, Linux, iOS, and Android.
+* [Headless Byteball](../../../headless-byteball) - headless wallet, primarily for server side use.
+* [Byteball Relay](../../../byteball-relay) - relay node for Byteball network.  It doesn't hold any private keys.
+* [Byteball Hub](../../../byteball-hub) - hub for Byteball network.  Includes the relay, plus can store and forward end-to-end encrypted messages among devices on the Byteball network.
+
+## Developer guides
+
+See the [wiki](https://github.com/byteball/byteballcore/wiki/Byteball-Developer-Guides).  Many of the features are not documented yet, see other [byteball repositories](https://github.com/byteball) as samples, for APIs see the `exports` of node.js modules.
+
+## Configuring
+
+The default settings are in the library's [conf.js](conf.js), they can be overridden in your project root's conf.js (see the clients above as examples), then in conf.json in the app data folder.  The app data folder is:
+
+* macOS: `~/Library/Application Support/<appname>`
+* Linux: `~/.config/<appname>`
+* Windows: `%LOCALAPPDATA%\<appname>`
+
+`<appname>` is `name` in your `package.json`.
+
+### Settings
+
+This is the list of some of the settings that the library understands (your app can add more settings that only your app understands):
+
+#### conf.port
+
+The port to listen on.  If you don't want to accept incoming connections at all, set port to `null`, which is the default.  If you do want to listen, you will usually have a proxy, such as nginx, accept websocket connections on standard port 443 and forward them to your byteball daemon that listens on port 6611 on the local interface.
+
+#### conf.storage
+
+Storage backend -- mysql or sqlite, the default is sqlite.  If sqlite, the database files are stored in the app data folder.  If mysql, you need to also initialize the database with [byteball.sql](byteball.sql) and set connection params, e.g. in conf.json in the app data folder:
+
+```json
+{
+	"port": 6611,
+	"storage": "mysql",
+	"database": {
+		"max_connections": 30,
+		"host"     : "localhost",
+		"user"     : "byteball",
+		"password" : "yourmysqlpassword",
+		"name"     : "byteball"
+	}
+}
+```
+#### conf.bLight
+
+Work as light client (`true`) or full node (`false`).  The default is full client.
+
+#### conf.bServeAsHub
+
+Whether to serve as hub on the Byteball network (store and forward e2e-encrypted messages for devices that connect to your hub).  The default is `false`.
+
+#### conf.myUrl
+
+If your node accepts incoming connections, this is its URL.  The node will share this URL with all its outgoing peers so that they can reconnect in any direction in the future.  By default the node doesn't share its URL even if it accepts connections.
+
+#### conf.bWantNewPeers
+
+Whether your node wants to learn about new peers from its current peers (`true`, the default) or not (`false`).  Set it to `false` to run your node in stealth mode so that only trusted peers can see its IP address (e.g. if you have online wallets on your server and don't want potential attackers to learn its IP).
+
+#### conf.socksHost, conf.socksPort, and conf.socksLocalDNS
+
+Settings for connecting through optional SOCKS5 proxy.  Use them to connect through TOR and hide your IP address from peers even when making outgoing connections.  This is useful and highly recommended when you are running an online wallet on your server and want to make it harder for potential attackers to learn the IP address of the target to attack.  Set `socksLocalDNS` to `false` to route DNS queries through TOR as well.
+
+#### MySQL conf for faster syncing
+
+To lower disk load and increase sync speed, you can optionally disable flushing to disk every transaction, instead doing it once a second. This can be done by setting `innodb_flush_log_at_trx_commit=0` in your MySQL server config file (my.ini)
+
+## Accepting incoming connections
+
+Byteball network works over secure WebSocket protocol wss://.  To accept incoming connections, you'll need a valid TLS certificate (you can get a free one from [letsencrypt.org](https://letsencrypt.org)) and a domain name (you can get a free domain from [Freenom](http://www.freenom.com/)).  Then you accept connections on standard port 443 and proxy them to your locally running byteball daemon.
+
+This is an example configuration for nginx to accept websocket connections at wss://byteball.one/bb and forward them to locally running daemon that listens on port 6611:
+
+```nginx
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	listen 443 ssl;
+	listen [::]:443 ssl;
+	ssl_certificate "/etc/letsencrypt/live/byteball.one/fullchain.pem";
+	ssl_certificate_key "/etc/letsencrypt/live/byteball.one/privkey.pem";
+
+	if ($host != "byteball.one") {
+		rewrite ^(.*)$ https://byteball.one$1 permanent;
+	}
+	if ($https != "on") {
+		rewrite ^(.*)$ https://byteball.one$1 permanent;
+	}
+
+	location = /bb {
+		proxy_pass http://localhost:6611;
+		proxy_http_version 1.1;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_set_header Upgrade $http_upgrade;
+		proxy_set_header Connection "upgrade";
+	}
+
+	root /var/www/html;
+	server_name _;
+}
+```
+
+# Factom
+
+[![Build Status](https://travis-ci.org/FactomProject/factomd.svg?branch=develop)](https://travis-ci.org/FactomProject/factomd)
+
+Factom is an Open-Source project that provides a way to build applications on the Bitcoin blockchain. 
+
+Factom began by providing proof of existence services, but then move on to provide proof of existence of transforms. A list of such entries can be thought of as a Factom Chain.  Factom can be used to implement private tokens, smart contracts, smart properties, and more.
+
+Factom leverages the Bitcoin Blockchain, but in a way that minimizes the amount of data actually inserted in the Blockchain. Thus it provides a mechanism for creating Bitcoin 2.0 services for the trading of assets, securities, commodities, or other complex applications without increasing blockchain "pollution".
+
+## State of Development
+
+We are very much at an Alpha level of development.  This is the M2 codebase, which is a direct implementation of the Factom Whitepaper.
+
+## Getting Started
+
+You need to set up Go environment with golang 1.5 or 1.6. You also need to install the latest version of git, and it doesn't hurt to set up a github account.
+
+###Install the m2 repository
+
+Get the M2 database, with the following command
+
+	go get github.com/FactomProject/factomd
+
+You should now be ready to execute factomd
+
+###Testing M2
+
+The test team is working on the master branch, while the developers are working on the m2 branch.  But because of shared repositories (some of which have some m2 changes), moving between milestone 1 code, m2s, and m2 is a bit complicated.  The all.sh script is your friend.  Follow these steps to get M2 setup and running for test:
+
+	cd factomd  			# However or wherever you put it>
+	./all.sh m2			# This is going to put you into the m2 branch
+	git checkout master		# Gets you back to master
+	go install			# Recompiles factomd with master code
+	
+You are now good to go.
+	
+
+
+### Running the M2 Simulator for the first time
+
+Create a ~/.factom/m2 directory
+
+cd to the factomd directory created with the go get.
+
+execute:
+
+	cp factomd.conf ~/.factom/m2/
+
+Now you are ready to execute factomd.
+
+	go install
+	factomd
+
+This is the simplist way to execute factomd with the defaults.  You can hit "enter" to get the status of the factom nodes running in the simulatory.
+
+## M2 Simulator 
+
+factomd can run a simulated network via the commandline.  This allows testing of much more complicated networks than would be possible otherwise.   The  simulator is very extensible, so new features will be added as we go along.
+
+### Databases and Journaling
+
+When you run factomd, if no database directory exists in the m2 directory, one is created.  All databases are created under the ~/.factom/m2/database directory.  These databases are named "bolt" for the main factom node, and "blotSimNNN" where NNN is the node number for Simulation nodes cloned from the main factom node.  Inside each of these directories, a network folder is created.  LOCAL (for test networks built on your own machine), MAIN for the main network, and TEST for the test network.   This allows swapping between networks without concern for corupting the databases.
+
+As M2 runs, journal files are created in the database directory. All messages are journaled for all nodes in the simulator.  This gives the ability to "rerun" a message sequence to debug observed issues. When factomd is restarted, all journal files for those nodes are reset.
+
+Below is a discription of how to run journal files.
+
+### Flags to control the simulator
+
+To get the current list of flags, type the command:
+
+	factomd -h
+
+Which will get you something like:
+	
+    //////////////////////// Copyright 2017 Factom Foundation
+    //////////////////////// Use of this source code is governed by the MIT
+    //////////////////////// license that can be found in the LICENSE file.
+    Go compiler version: go1.6.2
+    Using build: 
+    len(Args) 2
+    Usage of factomd:
+    -blktime int
+            Seconds per block.  Production is 600.
+    -clonedb string
+            Override the main node and use this database for the clones in a Network.
+    -count int
+            The number of nodes to generate (default 1)
+    -db string
+            Override the Database in the Config file and use this Database implementation
+    -drop int
+            Number of messages to drop out of every thousand
+    -exclusive
+            If true, we only dial out to special/trusted peers.
+    -folder string
+            Directory in .factom to store nodes. (eg: multiple nodes on one filesystem support)
+    -follower
+            If true, force node to be a follower.  Only used when replaying a journal.
+    -journal string
+            Rerun a Journal of messages
+    -leader
+            If true, force node to be a leader.  Only used when replaying a journal. (default true)
+    -net string
+            The default algorithm to build the network connections (default "tree")
+    -netdebug int
+            0-5: 0 = quiet, >0 = increasing levels of logging
+    -node int
+            Node Number the simulator will set as the focus
+    -p2pPort string
+            Port to listen for peers on. (default "8108")
+    -peers string
+            Array of peer addresses. 
+    -port int
+            Address to serve WSAPI on
+    -prefix string
+            Prefix the Factom Node Names with this value; used to create leaderless networks.
+    -profile string
+            If true, turn on the go Profiler to profile execution of Factomd
+    -rotate
+            If true, responsiblity is owned by one leader, and rotated over the leaders.
+    -runtimeLog
+            If true, maintain runtime logs of messages passed.
+    -test.bench string
+            regular expression to select benchmarks to run
+    -test.benchmem
+            print memory allocations for benchmarks
+    -test.benchtime duration
+            approximate run time for each benchmark (default 1s)
+    -test.blockprofile string
+            write a goroutine blocking profile to the named file after execution
+    -test.blockprofilerate int
+            if >= 0, calls runtime.SetBlockProfileRate() (default 1)
+    -test.count n
+            run tests and benchmarks n times (default 1)
+    -test.coverprofile string
+            write a coverage profile to the named file after execution
+    -test.cpu string
+            comma-separated list of number of CPUs to use for each test
+    -test.cpuprofile string
+            write a cpu profile to the named file during execution
+    -test.memprofile string
+            write a memory profile to the named file after execution
+    -test.memprofilerate int
+            if >=0, sets runtime.MemProfileRate
+    -test.outputdir string
+            directory in which to write profiles
+    -test.parallel int
+            maximum test parallelism (default 1)
+    -test.run string
+            regular expression to select tests and examples to run
+    -test.short
+            run smaller test suite to save time
+    -test.timeout duration
+            if positive, sets an aggregate time limit for all tests
+    -test.trace string
+            write an execution trace to the named file after execution
+    -test.v
+            verbose: print additional output
+    -timedelta int
+            Maximum timeDelta in milliseconds to offset each node.  Simulates deltas in system clocks over a network.
+
+The flags that begin with "test." are supplied by the profiling package installed.  The flags that relate to running factomd and the simulator are the following, with a little more explaination.  That follows below.
+
+### Simulator Commands
+
+While the simulator is running, you can perform a number of commands to poke at, and examine the state of factomd:
+
+* aN -- Dump the Admin block at directory block height N. So like a1 or a213. Currently just dumps the JSON. 
+* fN -- Dump the Factoid block at directory block height N.  So like f5 or f1203.  Pretty prints.
+* dN -- Dump the Directory block at directory block height N.  d4 or d21230
+* <enter> -- gives the state of all nodes in the simulated network.
+* D -- Dumps all the messages in the system to standard out, including the directory blocks and the process lists.
+* l -- Attempt to make this server a leader (must have a valid identity to become one) 
+* o -- Attempt to make this server an auditor (must have a valid identity to become one) 
+* s -- Show the state of all nodes as their state changes in the simulator.
+* i -- Shows the current identities being monitored for changes
+* u -- shows the current authorities (federated/audit servers)
+* N -- typing a node number shifts focus.  You now are talking to said node from the CLI or wallet
+
+### Simulator Commands Continued -- Identity
+M2 requires servers to have identities if they wish to have the ability to become a federated or audit server. To create an identity, entries must be entered into the blockchain, so controls were added to the simulator to assist in the creation and attachment of identities. Identites take about a minute to generate on a (macbook pro laptop) to meet the proper requirements, so a stack of identities are pregenerated to make testing easier.
+
+How the simulator controls work. First every instance of factomd will share the same stack of identites. Each instance will also have a local pool of identities they can use and attach to their nodes. To load their local pool of identities, they can pop identities off the shared stack, then attach the next open identity in their local identity pool to the current node:
+
+* gN -- Moves N identities from the shared stack to local identity pool
+  * Be mindful everyone shares the stack and it can run out.
+* t -- Attaches the next identity in the local pool that has not been taken to the current node
+
+<i>The 'gN' command will load entry credits into the zeros entry credit wallet to fund all identity sim controls if the wallet is low on funds. </i>
+
+### Launching Factomd
+ 
+Personally I open two consoles.  I run factomd redirected to out.txt, and in another console I run tail -f out.txt.
+
+So in one console I run a command like:
+
+	factomd -count=10 -net=tree > out.txt
+	
+And in another console I run:
+
+	tail -f out.txt
+	
+Then I type commands in the first console as described above, and see the output in the second.  Also messages and errors will show up in the first console (leaving the second console with simple output from factomd).
+
+### -count
+
+The command:
+	
+	factomd -count=10
+
+Will run the simulator with the configuration found in ~/.factom/m2/factom.conf with 10 nodes, named fnode0 to fnode9.  fnode0 will be the leader.  When you hit enter to get the status, you will see an "L" next to leader nodes.
+
+### -db
+
+You can override the database implementation used to run the simulator.  The options are "Bolt", "LDB", and "Map".  "Bolt" will give you a bolt database, "LDB" will get you a LevelDB database, and "Map" will get you a hashtable based database (i.e. nothing stored to disk").  The most common use of -db is to specify a "Map" database for tests that can be easily rerun without concern for past runs of the tests, or of messing up the database state.
+
+Keep in mind that Map will still overwrite any journals.  For example, you can run a 10 node Factom network in memory with the following command:
+
+	factoid -count=10 -db=Map
+	
+### -follower
+
+At times it is nice to force factomd to launch a follower rather than a leader (or the other way around).  Especially when playing back a journal of messages to investigate why a server got into a particular state.  So suppose we have a leader journal leader.log.  We could execute that log with this command:
+
+	factoid -journal=leader.log -follower=false -db=Map
+	
+Or if we had a follower log, follower.log, we could execute it with:
+
+	factoid -journal=follower.log -follower=true -db=Map
+
+##3 -journal
+
+Running factomd creates a journal file for every node in the ~/.factom/m2/database/ directory, of the form journalNNN.log where NNN is the node number.   So if there is a failure or a desire to rerun the same message stream as a test, this can be done by copying the journalNNN.log files, then running them.  For example, suppose we ran a 10 node network and did some testing:
+
+	factomd -count=10 
+	<testing done>
+	
+Now we can kill factomd, then copy the leader log and a follower log:
+
+	cp ~/.factom/m2/database/journal0.log ./leader.log
+	cp ~/.factom/m2/database/journal3.log ./follower.log
+	
+We can then replay these messages in factomd:
+
+	factoid -journal=leader.log -follower=false -db=Map
+	factoid -journal=follower.log -follower=true -db=Map
+
+Keep in mind, after the state has been replayed, the simulator continues to run.  So you can easily examine the resulting state, and (in the case of a leader) run more transactions and such.  And this is also journaled, so there is an ability to modify and rerun the modified states.
+
+The journal file can also be edited.  Only messages (lines that begin with 'MsgHex:' and the following hex) are interpreted.  So you can move these lines about, or even copy and paste from other files.
+	
+### -net
+
+The network is constructed using one of a number of algorithms.  tree is the default, and looks like this, where 0 is connected to 1 and 2, 1 is connected to 3 and 4, 2 is connected to 4 and 5, etc.
+
+	                      0
+	                   1     2
+	                3     4     5
+	             6     7     8     9
+	             ...
+
+circles is a bit hard to map out but it is a series of loops of seven nodes, where each loop is connected to about a 1/3 down from the previous loop, 2/3 down the loop prior to that one (if it exists) and 1/2 the circle 2 prior (if it exists). The goal is to maximize the number of alternate routes to later nodes to test timing of messages through the network.
+
+long is just one long chain of nodes
+
+loops creates a long chain of nodes that have short cuts added here and there.
+
+Running a particular network configuration looks like:
+
+	factomd -count=30 -net=tree
+	factomd -count=30 -net=circles
+	factomd -count=30 -net=long
+	factomd -count=30 -net=loops
+	
+### -node
+
+The simulator always keeps the focus on one node or another.  Some commands are node sensitive (printing directory blocks, etc.), and the walletapp and factom-cli talk to the node in focus.  This allows you to set the node in focus from the beginning.  Mostly a developer thing.
+
+	factom -count=30 -node=15 -net=tree
+	
+Would start up with node 15 as the focus.
+
+### -p2pAddress
+
+This opens up a TCP port and listens for new connections.
+
+Usage:
+	-p2pAddress="tcp://:8108"
+
+### -peers
+
+This connects to a remote computer and passes messages and blocks between them.
+
+	-peers="tcp://192.168.1.69:8108" 
+
+### -prefix
+
+This makes all the simnodes in this process followers.  It prefixes the text provided to the Node names (and the generated file names) of all the Factom instances created.   So without a prefix, you would get nodes named FNode0, FNode1, etc.  With the a_ prefix described below, you would get a_FNode0, a_FNode1, etc.
+
+FNode0 is currently a "magic name", and the node with that name becomes the first default Leader when building Factom up from scratch.  (Of course, if you are loading an existing network, it will come up with the last set of leaders).   In any event, adding the prefix avoids having FNode0 as a name, and as a result all the nodes will be followers.
+
+	-prefix=a_
+
+Multi-computer example:
+Computer Leader (ip x.69) `factomd -count=2 -p2pAddress="tcp://:8108" -peers="tcp://192.168.1.72:8108"`
+Computer Follower (ip x.72) `factomd -count=5 -p2pAddress="tcp://:8108" -peers="tcp://192.168.1.69:8108" -follower=true -prefix=a_`
+
+
+What is DigiByte?
+----------------
+
+DigiByte (DGB) is a rapidly growing three year old decentralized global blockchain with a focus on cyber security, payments & secure communications technologies.
+
+For more information, as well as an immediately useable, binary version of
+the DigiByte Core software, see https://digibyte.co
+
+DigiByte FAQ
+-------------
+Launch Date: January 10th, 2014
+
+Blockchain Type: Public, Decentralized, UTXO based, Multi-Algorithm
+
+Ticker Symbol: DGB
+
+Genisis Block Hash: "USA Today: 10/Jan/2014, Target: Data stolen from up to 110M customers"
+
+Max Total Supply: 21 Bilion DigiBytes in 21 Years (2035)
+
+Current Supply: 8,107,031,908 DGB (May 2017)
+
+Yearly Supply Inflation: 12% in 2017
+
+Block Reward Reduction: 1% Monthly
+
+Current Block Reward 891 DGB
+
+Mining Algorithims: Five (Sha256, Scrypt, Groestl, Skein & Qubit)
+
+Block Timing: 15 Second Blocks, (1.5 Minutes per algo)
+
+Algo Block Share: 20% Block Share Per Algo (5)
+
+Difficulty Retarget Every 1 Block, 5 Seperate Difficulties, 1 For Each Mining Algo
+
+SegWit Support Yes. First major altcoin to successfully activate Segwit. (April 2017)
+
+Hardforks 4. DigiShield, MultiAlgo, MultiShield, DigiSpeed
+
+Softforks 3. SegWit, CSV, NVersionBips
+
+You can mine DigiByte on one of five seperate mining algorithms. Each algo averages out to mine 20% of new blocks. This allows for much greater decentraliztion than other blockchains. In order for an attacker to hardfork DigiByte the attacker would need to control 93% of the hashrate on 1 algo, and 51% of the other 4 making DigiByte much more secure against PoW attacks than other blockchains.
+
+DigiShield Hardfork: Block 67,200, Feb. 28th, 2014
+
+MultiAlgo Hardfork: Block 145k, Sep. 1st 2014
+
+MultiShield Hardfork: Block 400k, Dec. 10th 2014
+
+DigiSpeed Hardfork: Block 1,430,000 Dec. 4th 2015
+
+DigiByte vs Bitcoin
+-------------------
+
+Security: 5 DigiByte mining algorithms vs. 1 Bitcoin algorithm.
+DigiByte mining is much more decentralized.
+DigiByte mining algorithms can be changed out in the future to prevent centralization.
+
+Speed:  DigiByte transactions occur much faster than Bitcoin transactions.
+1-3 second transaction notifications.
+15 second DigiByte blocks vs. 10 minute Bitcoin blocks.
+DigiBytes are confirmed after 1.5 minutes vs. 1 hour with Bitcoin.
+
+Transaction Volume: DigiByte can handle many more transactions per second.
+Bitcoin can only handle 3-4 transactions per second.
+DigiByte currently can handle 280+ transactions per second.
+The 2015 DigiSpeed hardfork introduced changes that double the capacity of the network every two years.
+
+Total Supply: More DigiBytes, lower price, more micro transactions, better price stability.
+21 billion DigiBytes will be created over 21 years.
+Only 21 million Bitcoins will be created over 140 years.
+1:1000 ratio. 1 Bitcoin for every 1000 DigiBytes.
+
+Flexibility: Ability to quickly add new features.
+DigiByte can add new features & upgrades much quicker than Bitcoin.
+Future DigiByte upgrades will push transaction limit to several thousand per second.
+
+Marketability & Usability: DigiByte is an easy brand to market to consumers.
+DigiBytes are much cheaper to acquire.
+$1 - $10 long-term price target per DigiByte.
+Send 5 DigiBytes instead of 0.005 Bitcoin.
+
+
+License
+-------
+
+DigiByte Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/digibyte/digibyte/tags) are created
+regularly to indicate new official, stable release versions of DigiByte Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Automated Testing
+
+Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
+submit new unit tests for old code. Unit tests can be compiled and run
+(assuming they weren't disabled in configure) with: `make check`. Further details on running
+and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
+
+There are also [regression and integration tests](/qa) of the RPC interface, written
+in Python, that are run automatically on the build server.
+These tests can be run (if the [test dependencies](/qa) are installed) with: `qa/pull-tester/rpc-tests.py`
+
+The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
+
+### Manual Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+#GameCredits integration/staging tree
+================================
+Copyright (c) 2009-2011 Bitcoin Developers<br>
+Copyright (c) 2011-2013 Litecoin Developers<br>
+Copyright (c) 2013-2014 GamersCoin Developers<br>
+Copyright (c) 2015-2016 GameCredits Developers<br>
+
+![GameCredits](http://i.imgur.com/OFViLxH.png)
+
+#What is GameCredits?
+----------------
+[![GameCredits](http://i.imgur.com/aA99Ryn.jpg)](https://www.youtube.com/watch?v=ls8ad6G5ejA)
+
+A new and exciting Open Source Gaming currency that will revolutionize in-game purchases and bring developers a monetization based on fair-play rules.
+
+GameCredits is a lite version of Bitcoin using scrypt as a proof-of-work algorithm.
+ - 1.5 minute block targets
+ - subsidy halves in 840k blocks
+ - ~84 million total coins
+ - 25 coins per block
+ - 1 blocks to retarget difficulty
+
+# We :heart: Pull Requests!
+Seriously, we really do.  It doesn't matter whether you're fixing a typo or overhauling a major area of the code base.  You will be showered in :thumbsup: :thumbsup: :thumbsup:<br>
+
+#License
+-------
+![GameCredits](http://i.imgur.com/Nfb8DQx.png)
+
+GameCredits is released under the terms of the MIT license. See `COPYING` for more
+information or see http://opensource.org/licenses/MIT.
+
+#Development process
+-------------------
+
+Developers work in their own trees, then submit pull requests when they think
+their feature or bug fix is ready.
+
+If it is a simple/trivial/non-controversial change, then one of the GameCredits
+development team members simply pulls it.
+
+If it is a *more complicated or potentially controversial* change, then the patch
+submitter will be asked to start a discussion (if they haven't already) on the
+[mailing list](https://bitcointalk.org/index.php?topic=1266597.0).
+
+The patch will be accepted if there is broad consensus that it is a good thing.
+Developers should expect to rework and resubmit patches if the code doesn't
+match the project's coding conventions (see `doc/coding.txt`) or are
+controversial.
+
+#Compiling the GameCredits daemon from source on Debian
+-----------------------------------------------------
+The process for compiling the GameCredits daemon, gamecreditsd, from the source code is pretty simple. This guide is based on the latest stable version of Debian Linux, though it should not need many modifications for any distro forked from Debian, such as Ubuntu and Xubuntu.
+
+###Update and install dependencies
+
+```
+apt-get update && apt-get upgrade
+apt-get install ntp git build-essential libssl-dev libdb-dev libdb++-dev libboost-all-dev libqrencode-dev autoconf automake pkg-config unzip
+
+wget http://miniupnp.free.fr/files/download.php?file=miniupnpc-1.8.tar.gz && tar -zxf download.php\?file\=miniupnpc-1.8.tar.gz && cd miniupnpc-1.8/
+make && make install && cd .. && rm -rf miniupnpc-1.8 download.php\?file\=miniupnpc-1.8.tar.gz
+```
+Note: Debian testing and unstable require libboost1.54-all-dev.
+
+###Compile the daemon
+```
+git clone https://github.com/gamecredits-project/GameCredits
+```
+
+###Compile gamecreditsd with own Berkeley DB
+```
+cd GameCredits
+./autogen.sh
+./configure
+make
+cd src
+strip gamecreditsd
+```
+
+###Compile gamecreditsd with Berkeley DB 4.8 Recommended
+```
+cd GameCredits
+./autogen.sh
+./bdb48.sh
+make
+cd src
+strip gamecreditsd
+```
+
+###Add a user and move gamecreditsd
+```
+adduser gamecredits && usermod -g users gamecredits && delgroup gamecredits && chmod 0701 /home/gamecredits
+mkdir /home/gamecredits/bin
+cp ~/GameCredits/src/gamecreditsd /home/gamecredits/bin/gamecreditsd
+chown -R gamecredits:users /home/gamecredits/bin
+cd && rm -rf GameCredits
+```
+
+###Run the daemon
+```
+su gamecredits
+cd && bin/gamecreditsd
+```
+
+On the first run, gamecreditsd will return an error and tell you to make a configuration file, named gamecredits.conf, in order to add a username and password to the file.
+```
+nano ~/.gamecredits/gamecredits.conf && chmod 0600 ~/.gamecredits/gamecredits.conf
+```
+Add the following to your config file, changing the username and password to something secure: 
+```
+daemon=1
+rpcuser=<username>
+rpcpassword=<secure password>
+server=1
+listen=1
+txindex=1
+#txindex will record every transaction from the blockchain to your offline db
+#it's an optional thing. It takes a lot longerr to sync that way 0 if you don't care
+rpcport=40001
+port=40002
+rpcallowip=127.0.0.1
+addnode=194.135.81.138
+addnode=46.105.118.15:40002
+addnode=142.4.218.175:40002
+addnode=216.146.143.177:40002
+addnode=73.9.181.217:3215
+addnode=54.201.183.106:32088
+addnode=204.68.122.11:40002
+addnode=77.249.199.235:39207
+addnode=195.154.223.134:40002
+addnode=37.187.144.36:24935
+addnode=204.11.237.233:42230
+addnode=5.9.20.83:40002
+addnode=98.115.147.74:34277
+addnode=108.61.10.90:40002
+addnode=104.236.84.230:40002
+addnode=108.163.197.58:58809
+addnode=192.99.0.112:33324
+addnode=162.255.117.105:64504
+addnode=192.99.47.172:30023
+addnode=167.160.36.126:32975
+addnode=89.36.212.56:49931
+addnode=5.196.20.189:53825
+addnode=104.255.67.131:52418
+addnode=38.129.236.35:55566
+addnode=89.216.241.17:50126
+```
+
+You can just copy the username and password provided by the error message when you first ran gamecreditsd.
+
+Run gamecreditsd once more to start the daemon! 
+
+###Optional Download GameCredits bootstrap
+```
+cd /home/gamecredits/.gamecredits/
+wget http://gmc.cryptocloudhosting.org/bootstrap/bootstrap.zip
+unzip bootstrap.zip
+```
+
+###Using gamecreditsd
+```
+gamecreditsd help
+```
+
+The above command will list all available functions of the GameCredits daemon. To safely stop the daemon, execute GameCreditsd stop. 
+
+#Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test. Please be patient and help out, and
+remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+# Introducing a decentralized, transparent digital ad exchange based on Ethereum Blockchain. #
+
+## Problem: ##
+
+Digital advertising is broken. The marketplace for online advertising, once dominated by advertisers, publishers and users, has become overrun by "middleman" ad exchanges,  audience  segmentation,  complicated  behavioral  and  cross-device  user tracking,  and  opaque  cross-party  sharing  through  data  management  platforms. Users  face  unprecedented  levels  of  malvertisements  and  privacy  violations.   Mobile advertising results in as much as $23 per month in data charges on the average
+user’s data plan, slow page loads, and as much as 21% less battery life.  In response, over 600 million mobile devices and desktops (globally) employ ad blocking software and this number is growing.  Traditional publishers have lost approximately 66% of their revenue over the past decade, adjusted for inflation.  Publishers face falling  revenue,  users  feel  increasingly  violated,  and  advertisers’  ability  to  assess effectiveness is diminished.  
+
+## Solution: ##
+
+The solution is a decentralized, transparent digital ad exchange based on Blockchain.  
+
+The first component is Brave, a fast, open source, privacy-focused browser that blocks third party ads and trackers, and builds in a ledger system that measures user attention to reward publishers accordingly.  
+
+Second component is BAT (Basic Attention Token),  a token for a decentralized ad exchange.  It compensates the browser user for attention while protecting privacy. BAT  connects  advertisers,  publishers,  and  users  and  is  denominated  by  relevant user attention, while removing social and economic costs associated with existing
+ad networks, e.g., fraud, privacy violations, and malvertising.  BAT is a payment system  that  rewards  and  protects  the  user  while  giving  better  conversion  to  ad vertisers and higher yield to publishers.  We see BAT and associated technologies as  a  future  part  of  web  standards,  solving  the  important  problem  of  monetizing publisher content while protecting user privacy.
+
+
+To learn more please visit https://basicattentiontoken.org/
+
+
+## Contact ##
+If you have questions please send us an email at info@basicattentiontoken.org or join our slack channel at http://slack.basicattentiontoken.org/
+
+----
+# Welcome to Nxt! #
+
+----
+## What is Nxt? ##
+Nxt is a modern economic system based on cryptography and blockchain technology.
+
+With Nxt, you can manage and interact with
+
+ - your **assets**
+ - your **businesses**
+ - your **customers**
+
+in such a way that no trusted third parties are required anymore.
+
+----
+## Get it! ##
+
+  - *pre-packaged* - `https://bitbucket.org/JeanLucPicard/nxt/downloads/nxt-client-{version}.zip`
+
+  - *dependencies*:
+    - *general* - Java 8
+    - *Ubuntu* - `http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html`
+    - *Debian* - `http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html`
+
+  - *repository* - `git clone https://bitbucket.org/JeanLucPicard/nxt.git`
+  
+----
+## Run it! ##
+
+  - Linux: `./run.sh`
+  - Mac: `./run.command`
+  - Window: `run.bat`
+
+  - Browse: http://localhost:7876/
+
+----
+## Compile it! ##
+
+  - if necessary with: `./compile.sh`
+  - you need jdk-8 as well
+
+----
+## Improve it! ##
+
+  - we love **pull requests**
+  - we love issues (resolved ones actually ;-) )
+  - in any case, make sure you leave **your ideas** at BitBucket
+  - assist others on the issue tracker
+  - **review** existing code and pull requests
+  - cf. coding guidelines in DEVELOPERS-GUIDE.md
+
+----
+## Troubleshooting the NRS (Nxt Reference Software) ##
+
+  - How to Stop the NRS Server?
+    - ctrl+c
+    - close the console window
+
+  - UI Errors or Stacktraces?
+    - report on BitBucket
+
+  - Permissions Denied?
+    - no spaces and only latin characters in the path to the NRS installation directory
+    - known jetty issue
+
+----
+## Further Reading ##
+
+  - in this repository:
+    - USERS-GUIDE.md
+    - DEVELOPERS-GUIDE.md
+    - OPERATORS-GUIDE.md
+
+  - in the wiki:
+    - nxtwiki.org
+
+  - on the forums:
+    - nxtforum.org
+    
+----
+
+PIVX Core integration/staging repository
+=====================================
+
+[![Build Status](https://travis-ci.org/PIVX-Project/PIVX.svg?branch=master)](https://travis-ci.org/PIVX-Project/PIVX) [![GitHub version](https://badge.fury.io/gh/PIVX-Project%2FPIVX.svg)](https://badge.fury.io/gh/PIVX-Project%2FPIVX)
+
+PIVX is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+- Anonymized transactions using coin mixing technology, we call it _Obfuscation_.
+- Fast transactions featuring guaranteed zero confirmation transactions, we call it _SwiftTX_.
+- Decentralized blockchain voting providing for consensus based advancement of the current Masternode
+  technology used to secure the network and provide the above features, each Masternode is secured
+  with collateral of 10K PIV
+
+More information at [pivx.org](http://www.pivx.org) Visit our ANN thread at [BitcoinTalk](http://www.bitcointalk.org/index.php?topic=1262920)
+
+### Coin Specs
+<table>
+<tr><td>Algo</td><td>Quark</td></tr>
+<tr><td>Block Time</td><td>60 Seconds</td></tr>
+<tr><td>Difficulty Retargeting</td><td>Every Block</td></tr>
+<tr><td>Max Coin Supply (PoW Phase)</td><td>43,199,500 PIV</td></tr>
+<tr><td>Max Coin Supply (PoS Phase)</td><td>Infinite</td></tr>
+<tr><td>Premine</td><td>60,000 PIV*</td></tr>
+</table>
+
+*60,000 PIV Premine was burned in block [279917](http://www.presstab.pw/phpexplorer/PIVX/block.php?blockhash=206d9cfe859798a0b0898ab00d7300be94de0f5469bb446cecb41c3e173a57e0)
+
+### Reward Distribution
+
+<table>
+<th colspan=4>PoW Phase</th>
+<tr><th>Block Height</th><th>Reward Amount</th><th>Notes</th><th>Duration (Days)</th></tr>
+<tr><td>1</td><td>60,000 PIV</td><td>Initial Premine</td><td>0 Days</td></tr>
+<tr><td>2-151200</td><td>250 PIV</td><td rowspan=2>Open Mining</td><td rowspan=2> Approx 180 Days</td></tr>
+<tr><td>151201-259200</td><td>50 PIV</td></tr>
+<tr><th colspan=4>PoS Phase</th></tr>
+<tr><th>Block Height</th><th colspan=3>Reward Amount</th></tr>
+<tr><td>259201-Infinite</td><td colspan=3>Variable based on SeeSaw Reward Mechanism</td></tr>
+</table>
+
+### PoW Rewards Breakdown
+
+<table>
+<th>Block Height</th><th>Masternodes</th><th>Miner</th><th>Budget</th>
+<tr><td>2-43200</td><td>20% (50 PIV)</td><td>80% (200 PIV)</td><td>N/A</td></tr>
+<tr><td>43201-151200</td><td>20% (50 PIV)</td><td>70% (200 PIV)</td><td>10% (25 PIV)</td></tr>
+<tr><td>151201-259200</td><td>45% (22.5 PIV)</td><td>45% (22.5 PIV)</td><td>10% (5 PIV)</td></tr>
+</table>
+
+### PoS Rewards Breakdown
+
+<table>
+<th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes & Stakers</th><th>Budget</th>
+<tr><td>Phase 1</td><td>259201-302399</td><td>50 PIV</td><td>90% (45 PIV)</td><td>10% (5 PIV)</td></tr>
+<tr><td>Phase 2</td><td>302400-345599</td><td>45 PIV</td><td>90% (40.5 PIV)</td><td>10% (4.5 PIV)</td></tr>
+<tr><td>Phase 3</td><td>345600-388799</td><td>40 PIV</td><td>90% (36 PIV)</td><td>10% (4 PIV)</td></tr>
+<tr><td>Phase 4</td><td>388800-431999</td><td>35 PIV</td><td>90% (31.5 PIV)</td><td>10% (3.5 PIV)</td></tr>
+<tr><td>Phase 5</td><td>432000-475199</td><td>30 PIV</td><td>90% (27 PIV)</td><td>10% (3 PIV)</td></tr>
+<tr><td>Phase 6</td><td>475200-518399</td><td>25 PIV</td><td>90% (22.5 PIV)</td><td>10% (2.5 PIV)</td></tr>
+<tr><td>Phase 7</td><td>518400-561599</td><td>20 PIV</td><td>90% (18 PIV)</td><td>10% (2 PIV)</td></tr>
+<tr><td>Phase 8</td><td>561600-604799</td><td>15 PIV</td><td>90% (13.5 PIV)</td><td>10% (1.5 PIV)</td></tr>
+<tr><td>Phase 9</td><td>604800-647999</td><td>10 PIV</td><td>90% (9 PIV)</td><td>10% (1 PIV)</td></tr>
+<tr><td>Phase X</td><td>648000-Infinite</td><td>5 PIV</td><td>90% (4.5 PIV)</td><td>10% (0.5 PIV)</td></tr>
+</table>
+
+# Bancor Protocol Contracts v0.6 (alpha)
+
+Bancor is a **smart-contract-based token conversion protocol**, which enables a single party to convert any 
+token to another, without requiring a second party to exchange with. It achieves this through the use of 
+reserve-tokens, which provide liquidity through autonomous algorithmic price discovery, regardless of trade volume.
+
+## Overview
+The Bancor protocol represents the first technological solution for the classic problem in economics known as the “Double Coincidence of Wants”, in the domain of asset exchange. For barter, the coincidence of wants problem was solved through money. For money, exchanges still rely on labor, via bid/ask orders and trade between external agents, to make markets and supply liquidity. 
+
+Through the use of smart-contracts, Smart Tokens can be created that hold one or more other tokens in their reserve. Tokens may represent existing national currencies or other types of assets. By using a reserve token model and algorithmically-calculated conversion rates, the Bancor Protocol creates a new type of ecosystem for asset exchange, with no central control. This decentralized hierarchical monetary system lays the foundation for an autonomous decentralized global exchange with numerous and substantial advantages.
+
+## Warning
+
+Bancor is a work in progress. Make sure you understand the risks before using it.
+
+# The Bancor Standards
+
+Bancor protocol is implemented using multiple contracts. The main ones are SmartToken and BancorChanger.
+BancorChanger implements the token changer standard (See https://github.com/ethereum/EIPs/issues/228) and is responsible for converting between a token and its reserves.
+SmartToken represents a changer aware ERC-20 compliant token.
+
+# The Smart Token Standard
+
+## Motivation
+
+Those will allow creating a Bancor compliant token while keeping dependencies at a minimum.
+In addition, it allows an owning contract to extend its functionality by giving the owner full control.
+
+## Specification
+
+### SmartToken
+
+First and foremost, a Smart Token is also an ERC-20 compliant token.
+As such, it implements both the standard token methods and the standard token events.
+
+### Methods
+
+Note that these methods can only be executed by the token owner.
+
+**issue**
+```cs
+function issue(address _to, uint256 _amount)
+```
+Increases the token supply and sends the new tokens to an account.
+<br>
+<br>
+<br>
+**destroy**
+```cs
+function destroy(address _from, uint256 _amount)
+```
+Removes tokens from an account and decreases the token supply.
+<br>
+<br>
+<br>
+**disableTransfers**
+```cs
+function disableTransfers(bool _disable)
+```
+Disables transfer/transferFrom functionality.
+<br>
+<br>
+<br>
+### Events
+
+**NewSmartToken**
+```cs
+event NewSmartToken(address _token)
+```
+Triggered when a smart token is deployed.
+<br>
+<br>
+<br>
+**Issuance**
+```cs
+event Issuance(uint256 _amount)
+```
+Triggered when the total supply is increased.
+<br>
+<br>
+<br>
+**Destruction**
+```cs
+event Destruction(uint256 _amount)
+```
+Triggered when the total supply is decreased.
+<br>
+<br>
+<br>
+
+# The Bancor Changer Standard
+
+The following section describes standard functions a bancor changer can implement.
+
+## Motivation
+
+Those will allow dapps and wallets to buy and sell the token.
+
+The most important here is `change`.
+
+## Specification
+
+### BancorToken
+
+First and foremost, a Bancor Changer is also an EIP-228 compliant changer.
+As such, it implements both the standard changer methods and the standard changer events.
+
+### Methods
+
+**reserveTokenCount**
+```cs
+function reserveTokenCount() public constant returns (uint16 count)
+```
+Gets the number of reserve tokens defined for the token.
+<br>
+<br>
+<br>
+**reserveTokens**
+```cs
+function reserveTokens() public constant returns (address[] reserveTokens)
+```
+Gets an array of the reserve token contract addresses.
+<br>
+<br>
+<br>
+**reserves**
+```cs
+function reserves(address _reserveToken) public constant
+```
+Gets the reserve token details.
+<br>
+<br>
+<br>
+**change**
+```cs
+function change(address _fromToken, address _toToken, uint256 _amount, uint256 _minReturn)
+```
+changes a specific amount of _fromToken to _toToken
+The change will only take place if it returns a value greater or equal to `_minReturn`.
+<br>
+<br>
+<br>
+
+### Events
+
+**Change**
+```cs
+event Change(address indexed _fromToken, address indexed _toToken, address indexed _trader, uint256 _amount, uint256 _return);
+```
+Triggered when a change between one of the changeable tokens takes place.
+
+## Testing
+Tests are included and can be run using truffle.
+
+### Prerequisites
+* Node.js v7.6.0+
+* truffle v3.2.2+
+* testrpc v3.0.5+
+
+To run the test, execute the following commands from the project's root folder -
+* npm start testrpc
+* npm test
+
+## Collaborators
+
+* **[Yudi Levi](https://github.com/yudilevi)**
+* **[Ilana Pinhas](https://github.com/ilanapi)**
+* **[Barak Manos](https://github.com/barakman)**
+* **[Martin Holst Swende](https://github.com/holiman)**
+
+
+## License
+
+Bancor Protocol is open source and distributed under the Apache License v2.0
+
+Bitdeal Core integration/staging tree
+=====================================
+
+[![Build Status](https://travis-ci.org/bitdeal-project/bitdeal.svg?branch=master)](https://travis-ci.org/bitdeal-project/bitdeal)
+
+https://bitdeal.co.in
+
+What is Bitdeal?
+----------------
+
+Bitdeal is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Bitdeal uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Bitdeal Core is the name of open source
+software which enables the use of this currency.
+
+For more information, as well as an immediately useable, binary version of
+the Bitdeal Core software, see [https://bitdeal.co.in](https://bitdeal.co.in).
+
+License
+-------
+
+Bitdeal Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
+information or see https://opensource.org/licenses/MIT.
+
+Development Process
+-------------------
+
+The `master` branch is regularly built and tested, but is not guaranteed to be
+completely stable. [Tags](https://github.com/bitdeal-project/bitdeal/tags) are created
+regularly to indicate new official, stable release versions of Bitdeal Core.
+
+The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+The developer [mailing list](https://groups.google.com/forum/#!forum/bitdeal-dev)
+should be used to discuss complicated or controversial changes before working
+on a patch set.
+
+Developer IRC can be found on Freenode at #bitdeal-dev.
+
+Testing
+-------
+
+Testing and code review is the bottleneck for development; we get more pull
+requests than we can review and test on short notice. Please be patient and help out by testing
+other people's pull requests, and remember this is a security-critical project where any mistake might cost people
+lots of money.
+
+### Quality Assurance (QA) Testing
+
+Changes should be tested by somebody other than the developer who wrote the
+code. This is especially important for large or high-risk changes. It is useful
+to add a test plan to the pull request description if testing the changes is
+not straightforward.
+
+Translations
+------------
+
+We only accept translation fixes that are submitted through [Bitcoin Core's Transifex page](https://www.transifex.com/projects/p/bitcoin/).
+Translations are converted to Bitdeal periodically.
+
+Translations are periodically pulled from Transifex and merged into the git repository. See the
+[translation process](doc/translation_process.md) for details on how this works.
+
+**Important**: We do not accept translation changes as GitHub pull requests because the next
+pull from Transifex would automatically overwrite them again.
